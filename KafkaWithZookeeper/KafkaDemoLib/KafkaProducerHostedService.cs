@@ -1,17 +1,15 @@
-﻿using Bogus;
-using Confluent.Kafka;
+﻿using Confluent.Kafka;
+using KafkaDemoLib.Models;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
-using static Confluent.Kafka.ConfigPropertyNames;
 
 namespace KafkaDemoLib;
 
 public class KafkaProducerHostedService : IHostedService
 {
     private readonly ILogger<KafkaProducerHostedService> _logger;
-    private IProducer<Null, string> _producer;
-    private Faker _faker = new Faker("en");
+    private readonly IProducer<Null, string> _producer;
 
     public KafkaProducerHostedService(ILogger<KafkaProducerHostedService> logger)
     {
@@ -25,12 +23,14 @@ public class KafkaProducerHostedService : IHostedService
         {
             while (!cancellationToken.IsCancellationRequested)
             {
-                var words = $"{DateTime.Now.ToString()}-{string.Join(' ', _faker.Lorem.Words(5))}";
-                _logger.LogInformation("produce: {words}", words);
-                await _producer.ProduceAsync(KafkaDemoEnv.DemoTopic, new Message<Null, string>
-                {
-                    Value = words
-                }, cancellationToken);
+                var item = SimpleModelFactory.New();
+                _logger.LogInformation("produce: {words}", item.ToJson());
+                await _producer.ProduceAsync(KafkaDemoEnv.DemoTopic,
+                    new Message<Null, string>
+                    {
+                        Value = item.ToJson()
+                    },
+                    cancellationToken);
                 _producer.Flush(cancellationToken);
                 await Task.Delay(TimeSpan.FromSeconds(RandomNumberGenerator.GetInt32(1, 5)), cancellationToken);
             }

@@ -1,19 +1,13 @@
 ﻿using Confluent.Kafka;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Confluent.Kafka.ConfigPropertyNames;
 
 namespace KafkaDemoLib;
 
 public class KafkaConsumerHostedService : IHostedService
 {
     private readonly ILogger<KafkaConsumerHostedService> _logger;
-    private IConsumer<Ignore, string> _consumer;
+    private readonly IConsumer<Ignore, string> _consumer;
 
     public KafkaConsumerHostedService(ILogger<KafkaConsumerHostedService> logger)
     {
@@ -28,10 +22,7 @@ public class KafkaConsumerHostedService : IHostedService
             while (!cancellationToken.IsCancellationRequested)
             {
                 var cr = _consumer.Consume(cancellationToken);
-                if (!string.IsNullOrEmpty(cr.Message.Value))
-                {
-                    _logger.LogInformation($"Recieved: {cr.TopicPartitionOffset} {cr.Message.Value}");
-                }
+                _logger.LogInformation($"Recieved: {cr.TopicPartitionOffset} {cr.Message.Key} > {cr.Message.Value}");
             }
         }
         catch (Exception ex)
