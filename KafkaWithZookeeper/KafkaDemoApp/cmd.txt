@@ -1,0 +1,28 @@
+docker pull confluentinc/cp-zookeeper
+docker pull confluentinc/cp-kafka
+docker network create kafka_net
+docker run -d --net=kafka_net --name=zookeeper -e ZOOKEEPER_CLIENT_PORT=2181 -e ZOOKEEPER_TICK_TIME=2000 -p 2181:2181 confluentinc/cp-zookeeper
+
+docker inspect zookeeper
+
+docker run -d --net=kafka_net --name=kafka -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 confluentinc/cp-kafka
+
+
+
+
+
+
+
+
+docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'
+docker logs zookeeper
+docker logs kafka
+
+
+docker-compose up -d
+docker-compose down
+docker-compose ps
+docker-compose exec broker bash -c "kafka-topics --list --bootstrap-server localhost:9092"
+
+
+kafka-topics --list --zookeeper localhost:2181

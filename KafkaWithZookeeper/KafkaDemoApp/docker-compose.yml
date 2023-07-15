@@ -10,7 +10,7 @@ services:
     container_name: zookeeper
     hostname: zookeeper
     ports:
-      - 2181:2181
+      - "2181:2181"
     volumes:
       - "zookeeper_data:/bitnami"
     environment:
@@ -18,12 +18,12 @@ services:
     networks:
       - kafka_net
     
-  kafka0:
+  kafka:
     image: docker.io/bitnami/kafka:latest
-    container_name: kafka0
-    hostname: kafka0
+    container_name: kafka
+    hostname: 1kafka
     ports:
-      - 9092:9092
+      - "9092:9092"
     volumes:
       - "kafka_data:/bitnami"
     environment:
@@ -39,24 +39,6 @@ services:
       - kafka_net
     depends_on:
       - zookeeper
-    
-  kafka-ui:
-    container_name: kafka-ui
-    image: provectuslabs/kafka-ui:latest
-    ports:
-      - 8080:8080
-    depends_on:
-      - kafka0
-    environment:
-      - KAFKA_CLUSTERS_0_NAME:local
-      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS:kafka0:9092
-      - KAFKA_CLUSTERS_0_METRICS_PORT:9997
-      - KAFKA_CLUSTERS_0_SCHEMAREGISTRY:http://schemaregistry0:8085
-      - KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME:first
-      - KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS:http://kafka-connect0:8083
-      - DYNAMIC_CONFIG_ENABLED:true
-  
-
 
 volumes:
   zookeeper_data:
