@@ -24,3 +24,9 @@ docker-compose exec broker bash -c "kafka-topics --list --bootstrap-server local
 
 
 kafka-topics --list --zookeeper localhost:2181
+
+
+
+#link
+https://github.com/provectus/kafka-ui/blob/master/documentation/compose/kafka-ui.yaml
+https://github.com/provectus/kafka-ui/blob/master/documentation/compose/kafka-with-zookeeper.yaml
