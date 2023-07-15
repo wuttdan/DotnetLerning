@@ -19,7 +19,9 @@ docker logs zookeeper
 docker logs kafka
 
 
-
+docker-compose up -d
+docker-compose down
+docker-compose ps
 docker-compose exec broker bash -c "kafka-topics --list --bootstrap-server localhost:9092"
 
 
