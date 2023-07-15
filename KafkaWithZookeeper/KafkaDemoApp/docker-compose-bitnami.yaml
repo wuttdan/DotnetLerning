@@ -18,10 +18,10 @@ services:
     networks:
       - kafka_net
     
-  kafka0:
+  kafka:
     image: docker.io/bitnami/kafka:latest
-    container_name: kafka0
-    hostname: kafka0
+    container_name: kafka
+    hostname: kafka
     ports:
       - "9092:9092"
     volumes:
@@ -47,13 +47,15 @@ services:
     restart: "no"
     ports:
       - "9000:9000"
+    volumes:
+      - "kafdrop_data:/kafdrop"
     environment:
-      - KAFKA_BROKERCONNECT:kafka0:9092
+      - KAFKA_BROKERCONNECT:kafka:9092
       - JVM_OPTS:"-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
     networks:
       - kafka_net
     depends_on:
-      - "kafka0"
+      - "kafka"
 
 volumes:
   zookeeper_data:
