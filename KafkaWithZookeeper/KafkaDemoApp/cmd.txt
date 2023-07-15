@@ -10,10 +10,6 @@ docker run -d --net=kafka_net --name=kafka -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNE
 
 
 
-
-
-
-
 docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'
 docker logs zookeeper
 docker logs kafka
@@ -26,3 +22,6 @@ docker-compose exec broker bash -c "kafka-topics --list --bootstrap-server local
 
 
 kafka-topics --list --zookeeper localhost:2181
+
+
+docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true provectuslabs/kafka-ui

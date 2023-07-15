@@ -12,24 +12,17 @@ namespace KafkaDemoLib;
 
 public class KafkaConsumerHostedService : IHostedService
 {
-    private readonly string DemoTopic = "demo";
     private readonly ILogger<KafkaConsumerHostedService> _logger;
     private IConsumer<Ignore, string> _consumer;
 
     public KafkaConsumerHostedService(ILogger<KafkaConsumerHostedService> logger)
     {
         _logger = logger;
-        var config = new ConsumerConfig
-        {
-            BootstrapServers = "localhost:9092",
-            AutoOffsetReset = AutoOffsetReset.Earliest,
-            GroupId = "my-group"
-        };
-        _consumer = new ConsumerBuilder<Ignore, string>(config).Build();
+        _consumer = new ConsumerBuilder<Ignore, string>(KafkaDemoEnv.ConsumerConf).Build();
     }
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        _consumer.Subscribe(DemoTopic);
+        _consumer.Subscribe(KafkaDemoEnv.DemoTopic);
         try
         {
             while (!cancellationToken.IsCancellationRequested)
@@ -37,14 +30,13 @@ public class KafkaConsumerHostedService : IHostedService
                 var cr = _consumer.Consume(cancellationToken);
                 if (!string.IsNullOrEmpty(cr.Message.Value))
                 {
-                    _logger.LogInformation($"Recieved: {cr.Message.Value}");
+                    _logger.LogInformation($"Recieved: {cr.TopicPartitionOffset} {cr.Message.Value}");
                 }
-                await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
             }
         }
-        catch (OperationCanceledException)
+        catch (Exception ex)
         {
-            // Ctrl-C was pressed.
+            _logger.LogError(ex, $"Error occurred at {GetType().Name}.StartAsync");
         }
         finally
         {
