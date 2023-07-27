@@ -4,7 +4,7 @@ namespace KafkaDemoLib;
 
 public static class KafkaDemoEnv
 {
-    public static readonly string DemoTopic = "Topic-Demo";
+    public static readonly string DemoTopic = "minieai-commit";
     public static readonly ProducerConfig ProducerConf = new ProducerConfig
     {
         BootstrapServers = "localhost:9092"
