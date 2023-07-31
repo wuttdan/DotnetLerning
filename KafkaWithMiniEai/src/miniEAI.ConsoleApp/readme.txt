@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold "Data Source=localhost\SQLEXPRESS;Initial Catalog=fbbeaitst;Integrated Security=True;MultipleActiveResultSets=True;" Microsoft.EntityFrameworkCore.SqlServer -c MiniEaiDbContext -o Domain -n Domain.Entities.Minieai -d
