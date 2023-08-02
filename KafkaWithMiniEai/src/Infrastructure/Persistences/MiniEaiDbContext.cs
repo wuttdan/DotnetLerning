@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Entities.Minieai;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Domain.Entities.Minieai;
+namespace Infrastructure.Persistences;
 
 public partial class MiniEaiDbContext : DbContext
 {
