@@ -1,7 +1,5 @@
-using Application;
 using Application.Common.Core;
 using Application.Query.NotifyAppointmentOrder;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MiniEAI.Api.Controllers;
 
@@ -12,10 +10,10 @@ namespace miniEAI.WebApi.Controllers;
 public sealed class QueryController : ApiController
 {
     [HttpPost("/api/NotifyAppointmentOrder")]
-    public async Task<ResponseBase> NotifyAppointmentOrder([FromHeader] RequestHeader head, [FromBody] NotifyAppointmentOrderRequestModel body, CancellationToken cancellationToken)
+    public async Task<ResponseBase> NotifyAppointmentOrder([FromHeader] RequestHeader header, [FromBody] NotifyAppointmentOrderRequestModel body, CancellationToken cancellationToken)
     {
-        body.Header = head;
+        body.Header = header;
         return await mediator.Send(body, cancellationToken);
     }
-        
+
 }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Domain.Entities.Minieai;
+﻿using Domain.Entities.Minieai;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Infrastructure.Persistences;
 

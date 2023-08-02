@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Domain.Entities.Minieai;
+﻿namespace Domain.Entities.Minieai;
 
 public partial class FbbTblEvAutoApproveHeader
 {

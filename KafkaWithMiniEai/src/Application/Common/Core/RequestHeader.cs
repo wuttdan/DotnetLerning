@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Domain.Common.Core;
+﻿using Domain.Common.Core;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Application.Common.Core;
