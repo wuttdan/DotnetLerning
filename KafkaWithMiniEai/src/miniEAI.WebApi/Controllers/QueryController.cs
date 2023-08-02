@@ -12,10 +12,6 @@ namespace miniEAI.WebApi.Controllers;
 public sealed class QueryController : ApiController
 {
     [HttpPost("/api/NotifyAppointmentOrder")]
-    //public async Task<ResponseBase> NotifyAppointmentOrder([FromHeader] RequestHeader head, [FromBody] NotifyAppointmentOrderRequestModel body, CancellationToken cancellationToken)
-    //    => await mediator.Send(body, cancellationToken);
-
-    //(x, y) => _ = (X += x, Y += y);
     public async Task<ResponseBase> NotifyAppointmentOrder([FromHeader] RequestHeader head, [FromBody] NotifyAppointmentOrderRequestModel body, CancellationToken cancellationToken)
     {
         body.Header = head;
