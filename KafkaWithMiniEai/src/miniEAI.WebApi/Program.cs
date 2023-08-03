@@ -4,6 +4,7 @@ using Application.Middleware;
 using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json.Serialization;
 
 try
@@ -52,6 +53,8 @@ try
         {
             options.SerializerSettings.ContractResolver = new DefaultContractResolver();
         });
+
+    builder.Services.AddLazyCache();
     builder.Services.AddHttpContextAccessor();
     builder.Services.AddLogging();
     builder.Services.AddEndpointsApiExplorer();
