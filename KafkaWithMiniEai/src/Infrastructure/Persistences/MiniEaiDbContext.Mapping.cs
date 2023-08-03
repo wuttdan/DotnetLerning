@@ -1,9 +1,11 @@
-﻿using Domain.Entities.Minieai;
+﻿using Application.Common.Core;
+using Application.Common.Interfaces;
+using Domain.Entities.Minieai;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistences;
 
-public partial class MiniEaiDbContext : DbContext
+public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
 {
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

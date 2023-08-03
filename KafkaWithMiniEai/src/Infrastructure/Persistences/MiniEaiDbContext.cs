@@ -1,14 +1,12 @@
-﻿using Domain.Entities.Minieai;
+﻿using Application.Common.Core;
+using Application.Common.Interfaces;
+using Domain.Entities.Minieai;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistences;
 
-public partial class MiniEaiDbContext : DbContext
+public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
 {
-    public MiniEaiDbContext()
-    {
-    }
-
     public MiniEaiDbContext(DbContextOptions<MiniEaiDbContext> options)
         : base(options)
     {
