@@ -1,0 +1,147 @@
+﻿{
+  "FIBRENET_ID": "8801332003",
+  "TYPE_OPER_DATE": "2021-08-31 00:01:32",
+  "MSG_SEQ_ID": 1,
+  "TYPE": "REAPPOINTMENT",
+  "MA_ORDER": {
+    "CUSTOMER_NAME": "กรจัญจน์ ธนารักษ์",
+    "ACCEPT_DATE": "2021-08-23 18:12:36",
+    "CONTACT_MOBILE_PHONE2": "0943542800",
+    "CONTACT_MOBILE_PHONE3": "NA",
+    "PRODUCT_NAME": "VDSL",
+    "UPLINK_RATE": "20Mbps",
+    "NOC_REMARK": "โทรนัดเวลากับลูกค้าก่อนตรวจสอบ รบกวนส่งช่างเข้า Onsite\n1. ข้อมูล เบอร์ติดต่อสำรอง หากช่างติดต่อเบอร์หลักไม่ได้*\n2. ข้อมูล Address : 789/472 อาคารดี คอนโด นคร ระยอง ซี ชั้น5 เนินพระ เมืองระยอง ระยอง 21150\n3. ข้อมูล พิกัดบ้านลูกค้า (12.68144,101.24154) มีใน Smart 7.0\n4. ข้อมูล ชื่อ Splitter  และ port  มีใน Smart 7.0",
+    "CONTACT_MOBILE_PHONE1": "0943542800",
+    "COMMIT_DATE": "2021-08-23 18:12:36",
+    "NOC_NUMBER": "020789204",
+    "FAULT_DESC": "ใช้งาน Internet ไม่ได้ สถานะไฟ DSL ไม่ติด / แก้ไขเบื้องต้นแล้วยัง ใช้งานไม่ได้",
+    "TROUBLE_TICKET_NO": "SRT2018091100117121",
+    "FAULT_TITLE": "FTTB - L1 - (Unable to use) User Offline พบไฟ Status DSL ไม่ติด",
+    "INSTALLATION_ADDRESS": "789/472 อาคารดี คอนโด นคร ระยอง ซี ชั้น5 เนินพระ เมืองระยอง ระยอง 21150",
+    "DETAILS_FOR_RESOLVED": "1. รบกวนทีมช่างเข้าตรวจสอบคู่สาย + ตู้ MDF + เช็คค่าสัญญาณให้เป็นปกติ2. เช็คคู่สายภายในห้องลูกค้า ,Outlet ,Spliter และอุปกรณ์ Router ลูกค้าเบอร์ติดต่อ NOC โทรเบอร์ 02-0789204",
+    "ACC_NBR": "8801332003",
+    "ACCESS_MODE": "VDSL",
+    "APPOINTMENT_TIMESLOT": "10:30-13:00",
+    "DOWNLINK_RATE": "50Mbps",
+    "SERVICE": "VDSL",
+    "CUSTOMER_COMPLAINT_NAME": "กรจัญจน์ ธนารักษ์",
+    "SIEBEL_REQUEST_NO": "S-21-063540914",
+    "CUSTOMER_COMPLAINT_MOBILE": "0943542800",
+    "COMPLAINT_TITLE": "FTTB - L1 - (Unable to use) User Offline พบไฟ Status DSL ไม่ติด",
+    "ORD_NO": "SRT2021082302660200",
+    "COMPLAINT_DESCRIPTION": "ใช้งาน Internet ไม่ได้ สถานะไฟ DSL ไม่ติด / แก้ไขเบื้องต้นแล้วยัง ใช้งานไม่ได้",
+    "APPOINTMENT_DATE": "2021-09-01",
+    "FIBRENET_ID": "8801332003",
+    "CUSTOMER_TICKET_NO": "S-21-063540914",
+    "TROUBLE_SYMPTOM": "1-GL7RH1A",
+    "CONTACT_PERSON_NAME": "กรจัญจน์ ธนารักษ์",
+    "TASK_ORDER_NO": "210830165717095729",
+    "JOB_STATE": "Prepare",
+    "JOB_PRIORITY": "",
+    "STAFF_LIST": [
+      {
+        "STAFF_PROFILE_PICTURE_FILENAME": "504773Qksj38GZb2Je4Gs7_0.jpg",
+        "STAFF_PHONE": "0655419792",
+        "STAFF_ROLE": "Engineer",
+        "STAFF_NAME": "กิตติพงศ์ พรมสาร (Kittipong Promsarn)",
+        "STAFF_CODE": "2020100337",
+        "STAFF_EMAIL": "doassetinter@hotmail.com",
+        "COMPANY_LIST": [
+          {
+            "COMPANY_NAME": "บจ.ดูแอสเสท อินเตอร์ (ระยอง)#Do Asset Inter (Rayong)",
+            "LOCATION_CODE": "1012026",
+            "STORAGE_LOCATION": "4340",
+            "VENDOR_CODE": "6100070087",
+            "COMPANY_ID": "24024",
+            "TEAM_LIST": [
+              {
+                "SHIP_TO": "1400021695",
+                "TEAM_NAME": "AISPL_InstallAndMA_Do Asset_Do Asset (Rayong)_1012026_FTB",
+                "LOCATION_CODE": "1012026",
+                "STORAGE_LOCATION": "4340",
+                "VENDOR_CODE": "6100070087",
+                "TEAM_SERVICE": "XDSL Join Construction|VDSL|VDSL MA",
+                "TEAM_ID": "501058"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "RESOURCE": {
+      "SPLITTER_NAME_PRIMARY": "N/A",
+      "DROP_WIRE_DISTANCE": "N/A",
+      "SPLITTER_DISTANCE": "N/A",
+      "ONU": "N/A",
+      "OLT_NAME": "N/A",
+      "SP2_OUT_PORT": "N/A",
+      "CPE_INSTALLATION": "N/A",
+      "GEMPORT": "N/A",
+      "SPLITTER_PORT": "N/A",
+      "CPE_SN": "ZTEEG8PL2U10245",
+      "ONU_ID": "N/A",
+      "ONU_UPLINK_PORT": "N/A",
+      "ACC_NBR": "8801332003",
+      "ODF_OUT": "N/A",
+      "DOWNLINK_RATE": "50Mbps",
+      "SP1_RUNNING_STATE": "N/A",
+      "SP2_LONGITUDE": "N/A",
+      "SP1_FIBER_CORE": "N/A",
+      "SP2_DISTANCE": "N/A",
+      "SP2_LATITUDE": "N/A",
+      "ORDER_FLAG": "1",
+      "SVLAN": "2024",
+      "CVLAN": "10",
+      "ODF_FIBER_CORE": "N/A",
+      "NEW_DROP_WIRE_ID": "N/A",
+      "DEVICE_MODEL": "MA5623",
+      "UPLINK_RATE": "20Mbps",
+      "DSLAM_PORT": "DE_DCDNR_C_01HW:0-0-1-11",
+      "ACTIVATION_ID": "1901369315",
+      "SP2_RUNNING_STATE": "N/A",
+      "MDF_OUT_PORT": "224931_DCDNR/DCDNR_C.MDF01_01:V01/12",
+      "REUSE_FLAG": "N/A",
+      "PASSWORD": "SktslEfG",
+      "SP1_OUT_PORT": "N/A",
+      "STANDARD_ADDRESS_NAME": "Noen Phra 21150 D CONDO NAKORN RAYONG/C",
+      "IP_ADDRESS": "10.3.130.228",
+      "END_POINT_LONGITUDE": "N/A",
+      "ODF_IN": "N/A",
+      "CPE_MODEL": "ZXHN H267A (White housing)(VDSL)",
+      "ONU_MODEL": "N/A",
+      "SP1_IN_PORT": "N/A",
+      "SERVICE": "VDSL",
+      "EXISTING_DROP_WIRE_ID": "N/A",
+      "DSLAM_MANUFACTURER": "HUAWEI",
+      "END_POINT_LATITUDE": "N/A",
+      "SP1_LATITUDE": "N/A",
+      "SP1_LONGITUDE": "N/A",
+      "TCONT": "N/A",
+      "SP2_IN_PORT": "N/A",
+      "OLT_MANUFACTURER": "N/A",
+      "OLT_PON_PORT": "N/A"
+    },
+    "WFM_SUBCONTRACT_REMARKS": [
+      {
+        "AUTHOR": "Piyaporn Panphaiboon",
+        "SUBCONTRACT_REMARKS": "ขอจ่ายงานคืนช่างกิตติพงศ์ พรมสาร ให้ช่างปิดใบงานไม่ต้องติดต่อลค.ไม่ต้องเข้าหน้างานค่ะ",
+        "REMARK_DATE": "2021-08-30 16:56:20"
+      },
+      {
+        "AUTHOR": "Weerasak Mueangmo",
+        "SUBCONTRACT_REMARKS": "NOC:รบกวนเข้าแก้ค่าสัญญาณใหม่ เนื่องจากSNR Downloads Bad (5.3) Uploads Bad (5.8) นัดลูกค้าใหม่  หากลูกค้าไม่สะดวกให้เข้าแก้ไข ให้แก้ไขที่ MDF อาคาร หาสาเหตุให้เจอ หากแก้ไขไม่ได้ให้ระบุลงหมายเหตุอย่างละเอียด",
+        "REMARK_DATE": "2021-08-28 13:09:36"
+      },
+      {
+        "AUTHOR": "Piyaporn Panphaiboon",
+        "SUBCONTRACT_REMARKS": "ขอจ่ายงานคืนช่าง กิตติพงศ์ พรมสาร ปิดใบงานไม่ต้องติดต่อลค.และไม่ต้องเข้าหน้างานค่ะ",
+        "REMARK_DATE": "2021-08-26 15:01:24"
+      },
+      {
+        "AUTHOR": "Weerasak Mueangmo",
+        "SUBCONTRACT_REMARKS": "NOC:รบกวนเข้าแก้ค่าสัญญาณใหม่ เนื่องจากSNR Downloads Bad (5.4) Uploads Bad (5.8) นัดลูกค้าใหม่  หากลูกค้าไม่สะดวกให้เข้าแก้ไข ให้แก้ไขที่ MDF อาคาร หาสาเหตุให้เจอ หากแก้ไขไม่ได้ให้ระบุลงหมายเหตุอย่างละเอียด",
+        "REMARK_DATE": "2021-08-25 10:53:48"
+      }
+    ]
+  }
+}

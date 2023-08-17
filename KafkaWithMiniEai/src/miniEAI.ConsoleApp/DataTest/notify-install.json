@@ -1,0 +1,209 @@
+﻿{"FIBRENET_ID": "8802328736",
+  "TYPE_OPER_DATE": "2021-08-31 00:01:38",
+  "MSG_SEQ_ID": 29,
+  "TYPE": "REAPPOINTMENT",
+  "INSTALL_ORDER": {
+    "CUSTOMER_NAME": "ประยุทธ์ จันทร์โอเลี้ยง",
+    "CONTACT_MOBILE_PHONE2": "0979215364",
+    "PRODUCT_NAME": "FTTH",
+    "CONTACT_MOBILE_PHONE3": "",
+    "JOB_PRIORITY": "Normal Job",
+    "INSTALLATION_LATITUDE": "13.701639",
+    "CONTACT_MOBILE_PHONE1": "0979215364",
+    "ROUTER_NUM": "1",
+    "SERVICE_PACK": "CVM-HomeBROADBAND Package 1000/200Mbps 399THB 12Months, Month 13-24Monthly fee 599THB (from999THB)",
+    "SERVICE_ONTOP": [ "0VOIP", "0IPTV", "1Mesh WiFi" ],
+    "PLAYBOX_CONTENT": "",
+    "INSTALLATION_ADDRESS": "9999 ซ.ซอยเฉลิมพระเกียรติ ร. 9 ซอย 61 แยก 1 ถ.ถนนเฉลิมพระเกียรติ ร. 9 ประเวศ ประเวศ กรุงเทพ 10250",
+    "ONTOP_PACK": "",
+    "REPLACE_ONT_FLAG": "N",
+    "FBSS_ORDER_NO": "9466022223_144838190.2",
+    "ACCESS_MODE": "FTTH",
+    "ORDER_TYPE": "JoinMesh",
+    "APPOINTMENT_TIMESLOT": "12:00-15:00",
+    "EVENTFLOW_FLAG": "",
+    "CUSTOMER_ORDER_NO": "R1602000362141_103487790",
+    "APPOINTMENT_DATE": "2021-09-01",
+    "REPLACE_ROUTER_FLAG": "N",
+    "BRAND": "",
+    "FIBRENET_ID": "8802328736",
+    "SERVICE_LEVEL": "H",
+    "CONTACT_PERSON_NAME": "ชมาภรณ์ พุ่มดอกไม้",
+    "INSTALLATION_LONGITUDE": "100.680954",
+    "TASK_ORDER_NO": "210825161542700740",
+    "JOB_STATE": "Prepare",
+    "STAFF_LIST": [
+      {
+        "STAFF_PROFILE_PICTURE_FILENAME": "503263sS26kjr27w6yYrtR_0.jpg",
+        "STAFF_PHONE": "0820422579",
+        "STAFF_ROLE": "Engineer",
+        "STAFF_NAME": "ผู้ใหญ่บ้าน หมาเลยเลขสิบ",
+        "STAFF_CODE": "2020060216",
+        "STAFF_EMAIL": "dmpbkk59@gmail.com",
+        "COMPANY_LIST": [
+          {
+            "COMPANY_NAME": "บจ.ดีเอ็มพี แอดวานซ์ โซลูชั่น เน็ตเวิร์ค (BKK)#DMP Advance Solution Network (BKK)",
+            "LOCATION_CODE": "1004784",
+            "STORAGE_LOCATION": "2820",
+            "VENDOR_CODE": "6100060268",
+            "COMPANY_ID": "19195",
+            "TEAM_LIST": [
+              {
+                "SHIP_TO": "1400021213",
+                "TEAM_NAME": "CAMP_MA_DMP Advance_DMP Advance (BKK)_1004784_FTH,PLB,CAP",
+                "LOCATION_CODE": "1004784",
+                "STORAGE_LOCATION": "2820",
+                "VENDOR_CODE": "6100060268",
+                "TEAM_SERVICE": "FTTH Join Construction|FTTH MA-BKK",
+                "TEAM_ID": "500312"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "STAFF_PROFILE_PICTURE_FILENAME": "",
+        "STAFF_LONGITUDE": "100.572331",
+        "STAFF_PHONE": "0999999999",
+        "STAFF_ROLE": "Engineer",
+        "STAFF_NAME": "don11",
+        "STAFF_LATITUDE": "13.812053",
+        "STAFF_CODE": "don11",
+        "STAFF_EMAIL": "test@oncloud.com",
+        "COMPANY_LIST": [
+          {
+            "COMPANY_NAME": "&，<>,\",'-penn",
+            "LOCATION_CODE": "234",
+            "STORAGE_LOCATION": "2342",
+            "VENDOR_CODE": "FBB456",
+            "COMPANY_ID": "500296",
+            "TEAM_LIST": [
+              {
+                "SHIP_TO": "ss",
+                "TEAM_NAME": "OSM_InstallAndMA_FBBTEST_&，<>,\",'-penn_234_FTH,FTR,PLB",
+                "LOCATION_CODE": "234",
+                "STORAGE_LOCATION": "2342",
+                "VENDOR_CODE": "FBB456",
+                "TEAM_SERVICE": "VDSL|FTTH",
+                "TEAM_ID": "501127"
+              },
+              {
+                "TEAM_NAME": "this is my team name 2222",
+                "TEAM_ID": "ORG_ID",
+                "TEAM_SERVICE": "FTTH-ROE|VDSL",
+                "VENDOR_CODE": "VEN-CODE",
+                "LOCATION_CODE": "LOC-CODE",
+                "STORAGE_LOCATION": "LOC-STORAGE",
+                "SHIP_TO": "Currently"
+              },
+              {
+                "TEAM_NAME": "this is my team name 3333",
+                "TEAM_ID": "ORG_ID",
+                "TEAM_SERVICE": "FTTH-ROE|VDSL",
+                "VENDOR_CODE": "VEN-CODE",
+                "LOCATION_CODE": "LOC-CODE",
+                "STORAGE_LOCATION": "LOC-STORAGE",
+                "SHIP_TO": "Currently"
+              }
+            ]
+          },
+          {
+            "COMPANY_NAME": "บจ.ดูแอสเสท อินเตอร์ (ระยอง)#Do Asset Inter (Rayong)",
+            "LOCATION_CODE": "1012026",
+            "STORAGE_LOCATION": "4340",
+            "VENDOR_CODE": "6100070087",
+            "COMPANY_ID": "24024",
+            "TEAM_LIST": [
+              {
+                "SHIP_TO": "1400021695",
+                "TEAM_NAME": "AISPL_InstallAndMA_Do Asset_Do Asset (Rayong)_1012026_FTB",
+                "LOCATION_CODE": "1012026",
+                "STORAGE_LOCATION": "4340",
+                "VENDOR_CODE": "6100070087",
+                "TEAM_SERVICE": "XDSL Join Construction|VDSL|VDSL MA",
+                "TEAM_ID": "501058"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "RESOURCE": {
+      "SPLITTER_NAME_PRIMARY": "P01_SP01_18:1/1",
+      "DROP_WIRE_DISTANCE": "N/A",
+      "NEW_DROP_WIRE_ID": "8802328736",
+      "SPLITTER_DISTANCE": "N/A",
+      "DEVICE_MODEL": "ZXA10 C320",
+      "OLT_NAME": "OB_SLPWM_ZZ_01ZT",
+      "ONU": "ONT3445987",
+      "UPLINK_RATE": "200Mbps",
+      "DSLAM_PORT": "N/A",
+      "ACTIVATION_ID": "2008859422",
+      "CPE_INSTALLATION": "N/A",
+      "SP2_OUT_PORT": "SLPWM_P01S21(8):1/6",
+      "SP2_RUNNING_STATE": "Available",
+      "MDF_OUT_PORT": "N/A",
+      "REUSE_FLAG": "N/A",
+      "GEMPORT": "N/A",
+      "SPLITTER_PORT": "SLPWM_P01S21(8):1/6",
+      "CPE_SN": "N/A",
+      "PASSWORD": "HVJGL8CXXW",
+      "ONU_ID": "19",
+      "SP1_OUT_PORT": "P01_SP01_18:1/1",
+      "ONU_UPLINK_PORT": "ONT3445987:pot/1",
+      "IP_ADDRESS": "10.1.39.5",
+      "STANDARD_ADDRESS_NAME": "Prawet 10250 / SOI CHALERMPRAKIAT R.9 SOI 61",
+      "END_POINT_LONGITUDE": "N/A",
+      "ODF_OUT": "ODF_SLPWM_01:1/1",
+      "ACC_NBR": "8802328736",
+      "ODF_IN": "ODF_SLPWM_01:0/1",
+      "CPE_MODEL": "HG8245 W5_DUMMY(ONU)",
+      "DOWNLINK_RATE": "1000Mbps",
+      "SP1_RUNNING_STATE": "Available",
+      "ONU_MODEL": "HG8245 W5_DUMMY(ONU)",
+      "SP1_IN_PORT": "P01_SP01_18:0/1",
+      "SP2_LONGITUDE": "100.68094",
+      "SERVICE": "FTTH",
+      "SP1_FIBER_CORE": "P01_SP01_18---P01_SP02_01_18:1",
+      "EXISTING_DROP_WIRE_ID": "N/A",
+      "DSLAM_MANUFACTURER": "N/A",
+      "END_POINT_LATITUDE": "N/A",
+      "ORDER_FLAG": "0",
+      "SP2_LATITUDE": "13.701206",
+      "SP2_DISTANCE": "N/A",
+      "SVLAN": "N/A",
+      "SP1_LATITUDE": "13.699798",
+      "SP1_LONGITUDE": "100.680905",
+      "TCONT": "N/A",
+      "CVLAN": "N/A",
+      "SP2_IN_PORT": "SLPWM_P01S21(8):0/1",
+      "ODF_FIBER_CORE": "ODF_SLPWM_01---P01_SP01_18:1",
+      "OLT_MANUFACTURER": "ZTE",
+      "OLT_PON_PORT": "OB_SLPWM_ZZ_01ZT:1-1-1-1"
+    },
+    "CRM_SUBCONTRACT_REMARKS": [
+      {
+        "REMARK_DATE": "2021-07-09 01:44:22",
+        "AUTHOR": "CRM",
+        "SUBCONTRACT_REMARKS": "ติดตั้ง Mesh Wifi ด้วยอุปกรณ์ HG8245 W5"
+      },
+      {
+        "SUBCONTRACT_REMARKS": "ขอจ่ายงานคืนช่างกิตติพงศ์ พรมสาร ให้ช่างปิดใบงานไม่ต้องติดต่อลค.ไม่ต้องเข้าหน้างานค่ะ",
+        "AUTHOR": "Piyaporn Panphaiboon",
+        "REMARK_DATE": "2021-08-30 16:56:20"
+      }
+    ],
+    "WFM_SUBCONTRACT_REMARKS": [
+      {
+        "AUTHOR": "Nutjaree nilpadab",
+        "SUBCONTRACT_REMARKS": "เดิน LAN OUTDOOR",
+        "REMARK_DATE": "2021-08-25 16:15:29"
+      },
+      {
+        "AUTHOR": "Nutjaree nilpadab",
+        "SUBCONTRACT_REMARKS": "Mesh ซื้อ**งาน W5 + เดินแลน LAN Outdor",
+        "REMARK_DATE": "2021-08-25 16:04:10"
+      }
+    ]
+  }
+}
