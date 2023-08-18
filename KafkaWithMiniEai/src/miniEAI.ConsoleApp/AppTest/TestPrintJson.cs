@@ -1,15 +1,6 @@
-﻿using Application.Query.NotifyAppointmentOrder;
+﻿using ConsoleTables;
 using miniEAI.ConsoleApp.CoreTest;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain.Extension;
-using System.Diagnostics;
-using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF;
-using ConsoleTables;
 
 namespace miniEAI.ConsoleApp.AppTest;
 
@@ -17,7 +8,7 @@ public sealed class TestPrintJson : ApplicationTestBase
 {
     private readonly string _printing = "d3";
     private static int _counter = 0;
-    public TestPrintJson(ILogger logger) 
+    public TestPrintJson(ILogger logger)
         : base(logger)
     {
     }

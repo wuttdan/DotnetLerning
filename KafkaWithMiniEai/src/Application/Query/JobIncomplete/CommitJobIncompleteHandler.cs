@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.JobIncomplete;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Query.JobIncomplete;
 

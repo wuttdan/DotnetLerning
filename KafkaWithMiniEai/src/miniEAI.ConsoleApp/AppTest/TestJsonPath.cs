@@ -1,22 +1,13 @@
-﻿using Application.Query.NotifyAppointmentOrder;
-using miniEAI.ConsoleApp.CoreTest;
+﻿using miniEAI.ConsoleApp.CoreTest;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain.Extension;
 using System.Diagnostics;
-using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF;
-using ConsoleTables;
 
 namespace miniEAI.ConsoleApp.AppTest;
 
 public sealed class TestJsonPath : ApplicationTestBase
 {
 
-    public TestJsonPath(ILogger logger) 
+    public TestJsonPath(ILogger logger)
         : base(logger)
     {
     }

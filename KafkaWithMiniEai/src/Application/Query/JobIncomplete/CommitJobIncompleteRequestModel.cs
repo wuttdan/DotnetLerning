@@ -3,6 +3,6 @@ using MediatR;
 
 namespace Application.Query.JobIncomplete;
 
-public sealed class CommitJobIncompleteRequestModel: JobIncompleteRequestBase, IRequest<CommitJobIncompleteResponseModel>
+public sealed class CommitJobIncompleteRequestModel : JobIncompleteRequestBase, IRequest<CommitJobIncompleteResponseModel>
 {
 }

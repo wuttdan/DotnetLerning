@@ -1,5 +1,4 @@
-﻿using Application.Query.JobApprove;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace Application.Query.JobIncomplete;
 

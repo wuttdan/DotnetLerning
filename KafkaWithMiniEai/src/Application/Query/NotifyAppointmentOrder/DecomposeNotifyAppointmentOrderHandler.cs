@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.NotifyAppointmentOrder;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Query.NotifyAppointmentOrder;
 

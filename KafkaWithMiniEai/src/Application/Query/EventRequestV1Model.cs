@@ -1,14 +1,14 @@
 ﻿using Application.Common.Core;
-using Application.Common.Models.SendCheckInLate;
+using Application.Query.SendCheckInLate;
 
 namespace Application.Query;
 
 public sealed class EventRequestV1Model
 {
     public EventParameterModel? MiniEaiRequest { get; set; }
-    public SendCheckInLateRequestBase AsSendCheckInLate(RequestHeader header)
+    public CommitSendCheckInLateRequestModel AsSendCheckInLate(RequestHeader header)
     {
-        var req = new SendCheckInLateRequestBase();
+        var req = new CommitSendCheckInLateRequestModel();
         req.Header = header;
         return req;
     }

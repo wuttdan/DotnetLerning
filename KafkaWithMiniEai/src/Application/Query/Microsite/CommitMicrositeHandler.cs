@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.Microsite;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Query.Microsite;
 

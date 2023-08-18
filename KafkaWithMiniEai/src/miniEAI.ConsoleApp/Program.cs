@@ -1,18 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Application;
+using Infrastructure;
 using Microsoft.AspNetCore.Hosting;
-using Serilog.Events;
-using Serilog;
 using Microsoft.Extensions.Configuration;
-using System.Security.Authentication;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Reflection;
 using miniEAI.ConsoleApp.AppTest;
-using System.Xml.Linq;
 using miniEAI.ConsoleApp.CoreTest;
-using Application;
-using Infrastructure;
+using Serilog.Events;
+using System.Reflection;
 
 namespace miniEAI.ConsoleApp;
 
@@ -35,7 +30,7 @@ static class Program
             Log.Information("Application Running");
 
             ////await SimpleRun<TestPrintJson>(provider, args);
-            await SimpleRun<TestJsonPath>(provider, args); 
+            await SimpleRun<TestJsonPath>(provider, args);
 
             await host.RunAsync();
         }
@@ -54,7 +49,7 @@ static class Program
         }
     }
 
-    private static async Task SimpleRun<TService>(IServiceProvider provider, params string[] args) 
+    private static async Task SimpleRun<TService>(IServiceProvider provider, params string[] args)
         where TService : ApplicationTestBase
     {
         var service = provider.GetRequiredService<TService>();

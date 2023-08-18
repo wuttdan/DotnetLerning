@@ -2,6 +2,6 @@
 
 namespace Application.Query.AutoApprove;
 
-public sealed class CommitAutoApproveResponseModel: AutoApproveResponseBase 
-{ 
+public sealed class CommitAutoApproveResponseModel : AutoApproveResponseBase
+{
 }

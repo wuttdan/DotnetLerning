@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace miniEAI.ConsoleApp.CoreTest;
+﻿namespace miniEAI.ConsoleApp.CoreTest;
 
 public interface IApplicationTest
 {

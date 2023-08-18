@@ -2,6 +2,6 @@
 
 namespace Application.Query.NotifyAppointmentOrder;
 
-public sealed class CommitNotifyAppointmentOrderResponseModel: NotifyAppointmentOrderResponseBase
+public sealed class CommitNotifyAppointmentOrderResponseModel : NotifyAppointmentOrderResponseBase
 {
 }

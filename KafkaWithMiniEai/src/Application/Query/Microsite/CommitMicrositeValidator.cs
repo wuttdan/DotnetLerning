@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.Microsite;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace Application.Query.Microsite;
 

@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.NotifyAppointmentOrder;
-using Application.Extension;
+﻿using Application.Extension;
 using FluentValidation;
 
 namespace Application.Query.NotifyAppointmentOrder;

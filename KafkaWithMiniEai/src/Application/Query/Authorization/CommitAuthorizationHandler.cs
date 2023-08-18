@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.Authorization;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Query.Authorization;
 

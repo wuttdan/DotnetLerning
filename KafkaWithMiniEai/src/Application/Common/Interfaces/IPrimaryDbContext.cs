@@ -1,10 +1,9 @@
 ﻿using Domain.Entities.Minieai;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Application.Common.Interfaces;
 
-public interface IPrimaryDbContext: IBaseDbContext
+public interface IPrimaryDbContext : IBaseDbContext
 {
     DbSet<FbbTblEvAuthorizationDetail> FbbTblEvAuthorizationDetails { get; set; }
     DbSet<FbbTblEvAuthorizationHeader> FbbTblEvAuthorizationHeaders { get; set; }

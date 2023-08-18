@@ -13,4 +13,8 @@ public interface IBaseDbContext : ICanConnect
     DbConnection GetDbConnection();
     DbCommand CreateTextCommand(string text);
     DbCommand CreateProcedureCommand(string text);
+    int SaveChanges();
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+
+
 }

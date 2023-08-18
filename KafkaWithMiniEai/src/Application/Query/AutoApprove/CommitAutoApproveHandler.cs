@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.AutoApprove;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Query.AutoApprove;
 

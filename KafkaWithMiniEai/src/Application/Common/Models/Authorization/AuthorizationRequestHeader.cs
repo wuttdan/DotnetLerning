@@ -1,7 +1,6 @@
 ﻿using Domain.Common.Core;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Xml.Linq;
 
 namespace Application.Common.Models.Authorization;
 

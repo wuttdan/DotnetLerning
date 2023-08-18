@@ -736,8 +736,6 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
 
             entity.Property(e => e.Group).HasColumnName("GROUP");
 
-            entity.Property(e => e.HeaderId).HasColumnName("HEADER_ID");
-
             entity.Property(e => e.LastUpd)
                 .HasMaxLength(50)
                 .HasColumnName("LAST_UPD");
@@ -750,6 +748,8 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasMaxLength(50)
                 .HasColumnName("LOCATION_CODE");
 
+            entity.Property(e => e.OrderId).HasColumnName("ORDER_ID");
+
             entity.Property(e => e.StaffId).HasColumnName("STAFF_ID");
 
             entity.Property(e => e.StorageLocation)
@@ -760,11 +760,11 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasMaxLength(50)
                 .HasColumnName("VENDOR_CODE");
 
-            entity.HasOne(d => d.Header)
+            entity.HasOne(d => d.Order)
                 .WithMany(p => p.FbbTblEvnotifyappointmentCompanies)
-                .HasForeignKey(d => d.HeaderId)
+                .HasForeignKey(d => d.OrderId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_FBB_TBL_EVNOTIFYAPPOINTMENT_COMPANIES_FBB_TBL_EVNOTIFYAPPOINTMENT_HEADER");
+                .HasConstraintName("FK_FBB_TBL_EVNOTIFYAPPOINTMENT_COMPANIES_FBB_TBL_EVNOTIFYAPPOINTMENT_ORDER");
         });
 
         modelBuilder.Entity<FbbTblEvNotifyAppointmentCrm>(entity =>
@@ -1399,8 +1399,6 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
 
             entity.Property(e => e.Group).HasColumnName("GROUP");
 
-            entity.Property(e => e.HeaderId).HasColumnName("HEADER_ID");
-
             entity.Property(e => e.LastUpd)
                 .HasMaxLength(50)
                 .HasColumnName("LAST_UPD");
@@ -1408,6 +1406,8 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
             entity.Property(e => e.LastUpdDate)
                 .HasColumnType("datetime")
                 .HasColumnName("LAST_UPD_DATE");
+
+            entity.Property(e => e.OrderId).HasColumnName("ORDER_ID");
 
             entity.Property(e => e.StaffCode)
                 .HasMaxLength(50)
@@ -1449,11 +1449,11 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasMaxLength(100)
                 .HasColumnName("STAFF_ROLE");
 
-            entity.HasOne(d => d.Header)
+            entity.HasOne(d => d.Order)
                 .WithMany(p => p.FbbTblEvnotifyappointmentStaffs)
-                .HasForeignKey(d => d.HeaderId)
+                .HasForeignKey(d => d.OrderId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_FBB_TBL_EVNOTIFYAPPOINTMENT_STAFFS_FBB_TBL_EVNOTIFYAPPOINTMENT_HEADER");
+                .HasConstraintName("FK_FBB_TBL_EVNOTIFYAPPOINTMENT_STAFFS_FBB_TBL_EVNOTIFYAPPOINTMENT_ORDER");
         });
 
         modelBuilder.Entity<FbbTblEvNotifyAppointmentTeam>(entity =>
@@ -1474,8 +1474,6 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
 
             entity.Property(e => e.Group).HasColumnName("GROUP");
 
-            entity.Property(e => e.HeaderId).HasColumnName("HEADER_ID");
-
             entity.Property(e => e.LastUpd)
                 .HasMaxLength(50)
                 .HasColumnName("LAST_UPD");
@@ -1487,6 +1485,8 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
             entity.Property(e => e.LocationCode)
                 .HasMaxLength(50)
                 .HasColumnName("LOCATION_CODE");
+
+            entity.Property(e => e.OrderId).HasColumnName("ORDER_ID");
 
             entity.Property(e => e.ShipTo)
                 .HasMaxLength(50)
@@ -1512,11 +1512,11 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasMaxLength(50)
                 .HasColumnName("VENDOR_CODE");
 
-            entity.HasOne(d => d.Header)
+            entity.HasOne(d => d.Order)
                 .WithMany(p => p.FbbTblEvnotifyappointmentTeams)
-                .HasForeignKey(d => d.HeaderId)
+                .HasForeignKey(d => d.OrderId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_FBB_TBL_EVNOTIFYAPPOINTMENT_TEAMS_FBB_TBL_EVNOTIFYAPPOINTMENT_HEADER");
+                .HasConstraintName("FK_FBB_TBL_EVNOTIFYAPPOINTMENT_TEAMS_FBB_TBL_EVNOTIFYAPPOINTMENT_ORDER");
         });
 
         modelBuilder.Entity<FbbTblEvNotifyAppointmentWfm>(entity =>

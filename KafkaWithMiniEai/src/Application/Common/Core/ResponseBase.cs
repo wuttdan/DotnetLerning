@@ -16,4 +16,15 @@ public abstract class ResponseBase : BracketModel
 
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore, Order = 99)]
     public dynamic? RESULT_DATA { get; set; }
+
+    public void AsSuccess(string resultDesc = "Success", string resultCode = "20000")
+    {
+        RESULT_CODE = resultCode;
+        RESULT_DESC = resultDesc;
+    }
+    public void AsError(string resultDesc = "MiniEAI Error", string resultCode = "50000")
+    {
+        RESULT_CODE = resultCode;
+        RESULT_DESC = resultDesc;
+    }
 }

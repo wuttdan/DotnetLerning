@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.SendCheckInLate;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Query.SendCheckInLate;
 

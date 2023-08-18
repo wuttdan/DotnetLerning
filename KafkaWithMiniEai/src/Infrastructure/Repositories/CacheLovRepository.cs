@@ -3,12 +3,6 @@ using Application.Common.Interfaces;
 using Domain.Entities.Minieai;
 using LazyCache;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories;
 

@@ -1,7 +1,4 @@
-﻿using Domain.Common;
-using System.Net.Http.Headers;
-
-namespace miniEAI.ConsoleApp.CoreTest;
+﻿namespace miniEAI.ConsoleApp.CoreTest;
 
 public abstract class ApplicationTestBase : IApplicationTest
 {

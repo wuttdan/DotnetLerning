@@ -1,11 +1,14 @@
 using Application;
 using Application.Common.Core;
+using Application.Common.Interfaces;
 using Application.Middleware;
 using Infrastructure;
+using Infrastructure.Persistences;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.Extensions.Caching.Memory;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
+using System.Globalization;
 
 try
 {
@@ -54,13 +57,29 @@ try
             options.SerializerSettings.ContractResolver = new DefaultContractResolver();
         });
 
+    CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo("en-US");
+    CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+
+    var primaryDbConnectionString = builder.Configuration.GetConnectionString("PrimaryDbConnectionString");
+    builder.Services.AddDbContextPool<MiniEaiDbContext>(options =>
+           options.UseSqlServer(
+                primaryDbConnectionString!,
+                b =>
+                {
+                    b.MigrationsAssembly(typeof(MiniEaiDbContext).Assembly.FullName);
+                    b.CommandTimeout((int)TimeSpan.FromMinutes(20).TotalSeconds);
+                    b.EnableRetryOnFailure(5, TimeSpan.FromMinutes(5.0), null);
+                }));
+    builder.Services.AddScoped<IPrimaryDbContext>(provider => provider.GetRequiredService<MiniEaiDbContext>());
+
     builder.Services.AddLazyCache();
     builder.Services.AddHttpContextAccessor();
     builder.Services.AddLogging();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
-    builder.Services.ConfigureInfrastructure(builder.Configuration);
+    builder.Services.ConfigureDomain(builder.Configuration);
     builder.Services.ConfigureApplication(builder.Configuration);
+    builder.Services.ConfigureInfrastructure(builder.Configuration);
 
     var app = builder.Build();
 

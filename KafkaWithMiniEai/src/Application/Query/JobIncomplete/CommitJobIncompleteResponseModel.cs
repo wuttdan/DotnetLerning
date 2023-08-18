@@ -2,6 +2,6 @@
 
 namespace Application.Query.JobIncomplete;
 
-public sealed class CommitJobIncompleteResponseModel: JobIncompleteResponseBase
+public sealed class CommitJobIncompleteResponseModel : JobIncompleteResponseBase
 {
 }

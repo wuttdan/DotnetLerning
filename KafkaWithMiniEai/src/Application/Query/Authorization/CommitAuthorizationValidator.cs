@@ -1,5 +1,4 @@
-﻿using Application.Common.Models.Authorization;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace Application.Query.Authorization;
 

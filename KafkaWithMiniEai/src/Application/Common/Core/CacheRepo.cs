@@ -5,7 +5,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace Application.Common.Core;
 
-public abstract class CacheRepo: ICacheRepo
+public abstract class CacheRepo : ICacheRepo
 {
     protected const int ExpireMinutes = 30;
     protected string _key = string.Empty;
