@@ -21,7 +21,7 @@ public class CacheLovRepository : CacheRepo, ICacheLovRepository
         _primDb = primDb;
     }
 
-    public async Task<FbbTblListOfValue> GetByNameAsync(string lovName, CancellationToken cancellationToken = default)
+    public async Task<FbbTblListOfValue?> GetByNameAsync(string lovName, CancellationToken cancellationToken = default)
     {
         var list = await _cache.GetAsync<List<FbbTblListOfValue>>(_key);
         if (list == null)

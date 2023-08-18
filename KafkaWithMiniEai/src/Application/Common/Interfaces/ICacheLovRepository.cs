@@ -4,5 +4,5 @@ namespace Application.Common.Interfaces;
 
 public interface ICacheLovRepository
 {
-    Task<FbbTblListOfValue> GetByNameAsync(string lovName, CancellationToken cancellationToken = default);
+    Task<FbbTblListOfValue?> GetByNameAsync(string lovName, CancellationToken cancellationToken = default);
 }
