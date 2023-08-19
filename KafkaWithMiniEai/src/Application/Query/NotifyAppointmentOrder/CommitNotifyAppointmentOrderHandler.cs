@@ -23,12 +23,7 @@ public sealed class CommitNotifyAppointmentOrderHandler : IRequestHandler<Commit
     //then add to minieai-decompose
     public Task<CommitNotifyAppointmentOrderResponseModel> Handle(CommitNotifyAppointmentOrderRequestModel request, CancellationToken cancellationToken)
     {
-        var result = new CommitNotifyAppointmentOrderResponseModel
-        {
-            TRANSACTION_ID = request.TransactionId,
-            FIBRENET_ID = request.FIBRENET_ID,
-            TYPE = request.TYPE
-        };
+        var result = request.CreateResponse();
         _logger.Information("CommitNotifyAppointmentOrder: {0}, {1}, {2}, {3}", request?.Header?.TransactionId, request?.FIBRENET_ID, request?.MSG_SEQ_ID, request?.TYPE);
 
         var executionStrategy = _primaryDb.Db.CreateExecutionStrategy();

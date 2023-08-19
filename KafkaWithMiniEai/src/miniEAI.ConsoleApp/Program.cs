@@ -30,7 +30,8 @@ static class Program
             Log.Information("Application Running");
 
             ////await SimpleRun<TestPrintJson>(provider, args);
-            await SimpleRun<TestJsonPath>(provider, args);
+            ////await SimpleRun<TestJsonPath>(provider, args);
+            await SimpleRun<Testpolymorphism>(provider, args); 
 
             await host.RunAsync();
         }

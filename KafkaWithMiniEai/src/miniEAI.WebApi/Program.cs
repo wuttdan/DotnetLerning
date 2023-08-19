@@ -1,6 +1,7 @@
 using Application;
 using Application.Common.Core;
 using Application.Common.Interfaces;
+using Application.Extension;
 using Application.Middleware;
 using Infrastructure;
 using Infrastructure.Persistences;
@@ -59,18 +60,6 @@ try
 
     CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo("en-US");
     CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo("en-US");
-
-    var primaryDbConnectionString = builder.Configuration.GetConnectionString("PrimaryDbConnectionString");
-    builder.Services.AddDbContextPool<MiniEaiDbContext>(options =>
-           options.UseSqlServer(
-                primaryDbConnectionString!,
-                b =>
-                {
-                    b.MigrationsAssembly(typeof(MiniEaiDbContext).Assembly.FullName);
-                    b.CommandTimeout((int)TimeSpan.FromMinutes(20).TotalSeconds);
-                    b.EnableRetryOnFailure(5, TimeSpan.FromMinutes(5.0), null);
-                }));
-    builder.Services.AddScoped<IPrimaryDbContext>(provider => provider.GetRequiredService<MiniEaiDbContext>());
 
     builder.Services.AddLazyCache();
     builder.Services.AddHttpContextAccessor();

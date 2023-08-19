@@ -1,11 +1,12 @@
-﻿using Application.Extension;
+﻿using Application.Common.Interfaces;
+using Application.Extension;
 using FluentValidation;
 
 namespace Application.Query.NotifyAppointmentOrder;
 
 public class CommitNotifyAppointmentOrderValidator : AbstractValidator<CommitNotifyAppointmentOrderRequestModel>
 {
-    public CommitNotifyAppointmentOrderValidator()
+    public CommitNotifyAppointmentOrderValidator(ICacheLovRepository lovRepo)
     {
         RuleFor(x => x.FIBRENET_ID)
             .NotNull().NotEmpty()
@@ -26,5 +27,20 @@ public class CommitNotifyAppointmentOrderValidator : AbstractValidator<CommitNot
             .NotNull().NotEmpty()
             .WithErrorCode("40006")
             .WithMessage(x => this.WithErrorMessage(nameof(x.MSG_SEQ_ID)));
+
+        RuleFor(x => x)
+            .Must(ValidateInstallOrderAndMaOrder)
+            .WithErrorCode("40007")
+            .WithMessage("'INSTALL_ORDER' and 'MA_ORDER' should not be dual null or empty.");
+    }
+
+    private bool ValidateInstallOrderAndMaOrder(object args)
+    {
+        var req = args as CommitNotifyAppointmentOrderRequestModel;
+        if (req?.MA_ORDER == null && req?.INSTALL_ORDER == null)
+        {
+            return false;
+        }
+        return true;
     }
 }

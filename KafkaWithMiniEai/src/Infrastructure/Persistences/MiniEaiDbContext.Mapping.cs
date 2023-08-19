@@ -1790,10 +1790,6 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasMaxLength(100)
                 .HasColumnName("ENDPOINT_NAME");
 
-            entity.Property(e => e.EventName)
-                .HasMaxLength(50)
-                .HasColumnName("EVENT_NAME");
-
             entity.Property(e => e.ExternalId)
                 .HasMaxLength(50)
                 .HasColumnName("EXTERNAL_ID");

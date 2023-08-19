@@ -12,7 +12,7 @@ public abstract class RequestBase : BracketModel
     [JsonIgnore]
     public string TransactionId => Header?.TransactionId ?? string.Empty;
     [JsonIgnore]
-    public string AppSource => Header?.AppSource ?? "minieai";
+    public string AppSource => Header?.AppSource ?? AppConstant.SystemName;
     [JsonIgnore]
-    public string AppTarget => Header?.AppDestination ?? "minieai";
+    public string AppTarget => Header?.AppDestination ?? AppConstant.SystemName;
 }

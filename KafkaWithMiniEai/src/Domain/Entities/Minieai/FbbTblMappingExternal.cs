@@ -5,7 +5,6 @@
         public int Id { get; set; }
         public int MappingWo { get; set; }
         public string? ExternalId { get; set; }
-        public string? EventName { get; set; }
         public string? Typews { get; set; }
         public string? EndpointName { get; set; }
         public string? UrlEndpoint { get; set; }

@@ -29,10 +29,14 @@ public class HomeController : ApiController
     [HttpGet("status")]
     public Task<IActionResult> GetStatusString()
     {
+        var host = Dns.GetHostName();
+        var hostReplace = "XXX";
         var results = new Dictionary<string, string>();
         results.Add("PrimaryDatabase String", PrimaryDb.GetDbConnection().ConnectionString);
         results.Add("PrimaryDatabase CanConnect", PrimaryDb.CanConnect ? "Connected" : "Failed");
-        results.Add("Server Name", Dns.GetHostName().Replace("FBBEAI", "XXXXXX"));
+        results.Add("SecondaryDatabase String", SecondaryDb.GetDbConnection().ConnectionString);
+        results.Add("SecondaryDatabase CanConnect", SecondaryDb.CanConnect ? "Connected" : "Failed");
+        results.Add("Server Name", $"{host.Remove(host.Length - hostReplace.Length, hostReplace.Length)}{hostReplace}");
         results.Add("Server Time", DateTime.Now.ToString());
         results.Add("Server UtcTime", DateTime.UtcNow.ToString());
         results.Add("Server TimeZone", TimeZoneInfo.Local.DisplayName);
