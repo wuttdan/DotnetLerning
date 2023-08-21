@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <Using Remove="Microsoft.Extensions.Logging" />
+    <InternalsVisibleTo Include="Application.IntegrationTests"/>
   </ItemGroup>
   
   <ItemGroup>
