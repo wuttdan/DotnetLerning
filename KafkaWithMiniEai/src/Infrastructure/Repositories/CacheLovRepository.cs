@@ -27,10 +27,10 @@ public class CacheLovRepository : CacheRepo, ICacheLovRepository
         return list!;
     }
 
-    public async Task<List<FbbTblListOfValue>?> GetByNameAsync(string lovName, CancellationToken cancellationToken = default)
+    public async Task<List<FbbTblListOfValue>?> GetByKeyAsync(string itemKey, string activeFlag = "Y", CancellationToken cancellationToken = default)
     {
         var list = await GetAllAsync(cancellationToken);
-        var results = list?.Where(x => x.LovName == lovName).ToList();
+        var results = list?.Where(x => x.LovName == itemKey && x.ActiveFlag == activeFlag).ToList();
         return results;
     }
 

@@ -1,3 +1,4 @@
+using Application.Common.Interfaces;
 using Application.Common.Models;
 using Microsoft.AspNetCore.Mvc;
 using MiniEAI.Api.Controllers;
@@ -13,6 +14,16 @@ public class HomeController : ApiController
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
+
+    private readonly ICacheValidateRepository _repoVal;
+    private readonly ICacheLovRepository _repoLovl;
+
+    public HomeController(ICacheValidateRepository repoVal, 
+        ICacheLovRepository repoLovl)
+    {
+        _repoVal = repoVal;
+        _repoLovl = repoLovl;
+    }
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()

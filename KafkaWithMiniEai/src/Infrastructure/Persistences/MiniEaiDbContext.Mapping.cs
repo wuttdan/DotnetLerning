@@ -1562,7 +1562,7 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasConstraintName("FK_FBB_TBL_EVNOTIFYAPPOINTMENT_WFMS_FBB_TBL_EVNOTIFYAPPOINTMENT_ORDER");
         });
 
-        modelBuilder.Entity<FbbTblEvsendchecklateDetail>(entity =>
+        modelBuilder.Entity<FbbTblEvSendChecklateDetail>(entity =>
         {
             entity.ToTable("FBB_TBL_EVSENDCHECKLATE_DETAIL");
 
@@ -1576,14 +1576,6 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasColumnType("datetime")
                 .HasColumnName("CREATED_DATE");
 
-            entity.Property(e => e.FieldName)
-                .HasMaxLength(50)
-                .HasColumnName("FIELD_NAME");
-
-            entity.Property(e => e.FieldValue)
-                .HasMaxLength(1024)
-                .HasColumnName("FIELD_VALUE");
-
             entity.Property(e => e.HeaderId).HasColumnName("HEADER_ID");
 
             entity.Property(e => e.LastUpd)
@@ -1594,7 +1586,105 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasColumnType("datetime")
                 .HasColumnName("LAST_UPD_DATE");
 
-            entity.Property(e => e.TypeGroup).HasColumnName("TYPE_GROUP");
+            entity.Property(e => e.LateDuration)
+                .HasMaxLength(10)
+                .HasColumnName("LATE_DURATION");
+
+            entity.Property(e => e.MnAppointmentDate)
+                .HasMaxLength(50)
+                .HasColumnName("MN_APPOINTMENT_DATE");
+
+            entity.Property(e => e.MnCheckinLateReason)
+                .HasMaxLength(1024)
+                .HasColumnName("MN_CHECKIN_LATE_REASON");
+
+            entity.Property(e => e.MnCheckinLateTime)
+                .HasMaxLength(50)
+                .HasColumnName("MN_CHECKIN_LATE_TIME");
+
+            entity.Property(e => e.MnCreateDate)
+                .HasMaxLength(50)
+                .HasColumnName("MN_CREATE_DATE");
+
+            entity.Property(e => e.MnCreatedBy)
+                .HasMaxLength(50)
+                .HasColumnName("MN_CREATED_BY");
+
+            entity.Property(e => e.MnCurrentLatitude)
+                .HasMaxLength(20)
+                .HasColumnName("MN_CURRENT_LATITUDE");
+
+            entity.Property(e => e.MnCurrentLongitude)
+                .HasMaxLength(20)
+                .HasColumnName("MN_CURRENT_LONGITUDE");
+
+            entity.Property(e => e.MnCustomerAddress)
+                .HasMaxLength(512)
+                .HasColumnName("MN_CUSTOMER_ADDRESS");
+
+            entity.Property(e => e.MnCustomerContact1)
+                .HasMaxLength(100)
+                .HasColumnName("MN_CUSTOMER_CONTACT_1");
+
+            entity.Property(e => e.MnCustomerContact2)
+                .HasMaxLength(100)
+                .HasColumnName("MN_CUSTOMER_CONTACT_2");
+
+            entity.Property(e => e.MnCustomerContact3)
+                .HasMaxLength(100)
+                .HasColumnName("MN_CUSTOMER_CONTACT_3");
+
+            entity.Property(e => e.MnCustomerLatitude)
+                .HasMaxLength(20)
+                .HasColumnName("MN_CUSTOMER_LATITUDE");
+
+            entity.Property(e => e.MnCustomerLongitude)
+                .HasMaxLength(20)
+                .HasColumnName("MN_CUSTOMER_LONGITUDE");
+
+            entity.Property(e => e.MnCustomerName)
+                .HasMaxLength(100)
+                .HasColumnName("MN_CUSTOMER_NAME");
+
+            entity.Property(e => e.MnPackage)
+                .HasMaxLength(512)
+                .HasColumnName("MN_PACKAGE");
+
+            entity.Property(e => e.MnProductName)
+                .HasMaxLength(100)
+                .HasColumnName("MN_PRODUCT_NAME");
+
+            entity.Property(e => e.MnRegion)
+                .HasMaxLength(50)
+                .HasColumnName("MN_REGION");
+
+            entity.Property(e => e.MnRemarks)
+                .HasMaxLength(1024)
+                .HasColumnName("MN_REMARKS");
+
+            entity.Property(e => e.MnSlot)
+                .HasMaxLength(50)
+                .HasColumnName("MN_SLOT");
+
+            entity.Property(e => e.MnStaffCode)
+                .HasMaxLength(100)
+                .HasColumnName("MN_STAFF_CODE");
+
+            entity.Property(e => e.MnStaffName)
+                .HasMaxLength(100)
+                .HasColumnName("MN_STAFF_NAME");
+
+            entity.Property(e => e.MnStaffPhone)
+                .HasMaxLength(100)
+                .HasColumnName("MN_STAFF_PHONE");
+
+            entity.Property(e => e.MnSubcontractTeam)
+                .HasMaxLength(100)
+                .HasColumnName("MN_SUBCONTRACT_TEAM");
+
+            entity.Property(e => e.Refid)
+                .HasMaxLength(50)
+                .HasColumnName("REFID");
 
             entity.HasOne(d => d.Header)
                 .WithMany(p => p.FbbTblEvsendchecklateDetails)
@@ -1603,7 +1693,7 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasConstraintName("FK_FBB_TBL_EVSENDCHECKLATE_DETAIL_FBB_TBL_EVSENDCHECKLATE_HEADER");
         });
 
-        modelBuilder.Entity<FbbTblEvsendchecklateHeader>(entity =>
+        modelBuilder.Entity<FbbTblEvSendChecklateHeader>(entity =>
         {
             entity.ToTable("FBB_TBL_EVSENDCHECKLATE_HEADER");
 
@@ -1939,6 +2029,10 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .IsUnicode(false)
                 .HasColumnName("ACTIVE_FLAG")
                 .IsFixedLength();
+
+            entity.Property(e => e.TypeEvent)
+                .HasMaxLength(100)
+                .HasColumnName("TYPE_EVENT");
 
             entity.Property(e => e.AppSoucre)
                 .HasMaxLength(50)

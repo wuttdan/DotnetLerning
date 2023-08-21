@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Application.Common.Core;
 
-public class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
+public sealed class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
     public ValidatorBehavior(IEnumerable<IValidator<TRequest>> validators)

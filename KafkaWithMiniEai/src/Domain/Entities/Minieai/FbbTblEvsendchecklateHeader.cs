@@ -1,10 +1,10 @@
 ﻿namespace Domain.Entities.Minieai
 {
-    public partial class FbbTblEvsendchecklateHeader
+    public partial class FbbTblEvSendChecklateHeader
     {
-        public FbbTblEvsendchecklateHeader()
+        public FbbTblEvSendChecklateHeader()
         {
-            FbbTblEvsendchecklateDetails = new HashSet<FbbTblEvsendchecklateDetail>();
+            FbbTblEvsendchecklateDetails = new HashSet<FbbTblEvSendChecklateDetail>();
         }
 
         public long Id { get; set; }
@@ -19,6 +19,6 @@
         public DateTime? LastUpdDate { get; set; }
         public string? ServerName { get; set; }
 
-        public virtual ICollection<FbbTblEvsendchecklateDetail> FbbTblEvsendchecklateDetails { get; set; }
+        public virtual ICollection<FbbTblEvSendChecklateDetail> FbbTblEvsendchecklateDetails { get; set; }
     }
 }

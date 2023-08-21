@@ -36,6 +36,7 @@ public static class DependencyInjection
         services.AddScoped<ISecondaryDbContext>(provider => provider.GetRequiredService<HvrDbContext>());
 
         services.AddScoped<ICacheLovRepository, CacheLovRepository>();
+        services.AddScoped<ICacheValidateRepository, CacheValidateRepository>();
 
         services.AddHttpClient();
         services.AddHttpClient(IHttpClientFactory_Extension.BypassClientName)

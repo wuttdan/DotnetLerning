@@ -1,6 +1,7 @@
 ﻿using Application.Common.Core;
 using Application.Common.Interfaces;
 using Domain.Entities.Minieai;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistences;
@@ -35,8 +36,8 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
     public virtual DbSet<FbbTblEvNotifyAppointmentStaff> FbbTblEvNotifyAppointmentStaffs { get; set; } = null!;
     public virtual DbSet<FbbTblEvNotifyAppointmentTeam> FbbTblEvNotifyAppointmentTeams { get; set; } = null!;
     public virtual DbSet<FbbTblEvNotifyAppointmentWfm> FbbTblEvNotifyAppointmentWfms { get; set; } = null!;
-    public virtual DbSet<FbbTblEvsendchecklateDetail> FbbTblEvsendchecklateDetails { get; set; } = null!;
-    public virtual DbSet<FbbTblEvsendchecklateHeader> FbbTblEvsendchecklateHeaders { get; set; } = null!;
+    public virtual DbSet<FbbTblEvSendChecklateDetail> FbbTblEvsendchecklateDetails { get; set; } = null!;
+    public virtual DbSet<FbbTblEvSendChecklateHeader> FbbTblEvsendchecklateHeaders { get; set; } = null!;
     public virtual DbSet<FbbTblExceptionError> FbbTblExceptionErrors { get; set; } = null!;
     public virtual DbSet<FbbTblListOfValue> FbbTblListOfValues { get; set; } = null!;
     public virtual DbSet<FbbTblLogging> FbbTblLoggings { get; set; } = null!;
@@ -68,5 +69,17 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
         ////#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         ////    optionsBuilder.UseSqlServer("#######");
         ////}
+    }
+
+    public string GenRefIdSeq()
+    {
+        var refId = new SqlParameter("@newRefId", System.Data.SqlDbType.Int)
+        {
+            Direction = System.Data.ParameterDirection.Output
+        };
+
+        var rowCount = Database.ExecuteSqlRaw("SELECT @newRefId = (NEXT VALUE FOR REFID_SEQ)", refId);
+        var result = $"MEI-{(int)refId.Value}";
+        return result;
     }
 }

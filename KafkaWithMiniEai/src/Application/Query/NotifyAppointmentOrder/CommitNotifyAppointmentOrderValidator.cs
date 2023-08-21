@@ -6,7 +6,7 @@ namespace Application.Query.NotifyAppointmentOrder;
 
 public class CommitNotifyAppointmentOrderValidator : AbstractValidator<CommitNotifyAppointmentOrderRequestModel>
 {
-    public CommitNotifyAppointmentOrderValidator(ICacheLovRepository lovRepo)
+    public CommitNotifyAppointmentOrderValidator()
     {
         RuleFor(x => x.FIBRENET_ID)
             .NotNull().NotEmpty()

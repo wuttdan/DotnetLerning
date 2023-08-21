@@ -24,7 +24,7 @@ public sealed class CommitNotifyAppointmentOrderHandler : IRequestHandler<Commit
     public Task<CommitNotifyAppointmentOrderResponseModel> Handle(CommitNotifyAppointmentOrderRequestModel request, CancellationToken cancellationToken)
     {
         var result = request.CreateResponse();
-        _logger.Information("CommitNotifyAppointmentOrder: {0}, {1}, {2}, {3}", request?.Header?.TransactionId, request?.FIBRENET_ID, request?.MSG_SEQ_ID, request?.TYPE);
+        _logger.Information("{0}: {0}, {1}, {2}, {3}", GetType().Name, request?.TransactionId, request?.FIBRENET_ID, request?.MSG_SEQ_ID, request?.TYPE);
 
         var executionStrategy = _primaryDb.Db.CreateExecutionStrategy();
         executionStrategy.Execute(() =>
@@ -304,7 +304,7 @@ public sealed class CommitNotifyAppointmentOrderHandler : IRequestHandler<Commit
     {
         var header = new FbbTblEvNotifyAppointmentHeader
         {
-            TransactionId = req?.Header?.TransactionId,
+            TransactionId = req?.TransactionId,
             FibrenetId = req?.FIBRENET_ID,
             Type = req?.TYPE,
             OrderType = req?.MA_ORDER == null ? "INSTALL" : "MA",

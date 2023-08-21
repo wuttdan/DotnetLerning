@@ -5,4 +5,5 @@ namespace Application.Query.SendCheckInLate;
 
 public sealed class CommitSendCheckInLateRequestModel : SendCheckInLateRequestBase, IRequest<CommitSendCheckInLateResponseModel>
 {
+
 }

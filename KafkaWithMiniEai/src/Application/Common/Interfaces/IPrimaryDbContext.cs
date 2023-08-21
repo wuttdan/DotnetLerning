@@ -28,8 +28,8 @@ public interface IPrimaryDbContext : IBaseDbContext
     DbSet<FbbTblEvNotifyAppointmentStaff> FbbTblEvNotifyAppointmentStaffs { get; set; }
     DbSet<FbbTblEvNotifyAppointmentTeam> FbbTblEvNotifyAppointmentTeams { get; set; }
     DbSet<FbbTblEvNotifyAppointmentWfm> FbbTblEvNotifyAppointmentWfms { get; set; }
-    DbSet<FbbTblEvsendchecklateDetail> FbbTblEvsendchecklateDetails { get; set; }
-    DbSet<FbbTblEvsendchecklateHeader> FbbTblEvsendchecklateHeaders { get; set; }
+    DbSet<FbbTblEvSendChecklateDetail> FbbTblEvsendchecklateDetails { get; set; }
+    DbSet<FbbTblEvSendChecklateHeader> FbbTblEvsendchecklateHeaders { get; set; }
     DbSet<FbbTblExceptionError> FbbTblExceptionErrors { get; set; }
     DbSet<FbbTblListOfValue> FbbTblListOfValues { get; set; }
     DbSet<FbbTblLogging> FbbTblLoggings { get; set; }
@@ -53,4 +53,5 @@ public interface IPrimaryDbContext : IBaseDbContext
     DbSet<FbbTblWoSoaStaff> FbbTblWoSoaStaffs { get; set; }
     DbSet<FbbTblWoSoaTeam> FbbTblWoSoaTeams { get; set; }
     DbSet<FbbTblWoSoaWfm> FbbTblWoSoaWfms { get; set; }
+    string GenRefIdSeq();
 }

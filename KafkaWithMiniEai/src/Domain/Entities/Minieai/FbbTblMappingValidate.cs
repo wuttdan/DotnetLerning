@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public int? MappingId { get; set; }
+        public string? TypeEvent { get; set; }
         public string? AppSoucre { get; set; }
         public string? ParameterXml { get; set; }
         public string? ConstraintValidate { get; set; }
