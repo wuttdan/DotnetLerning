@@ -16,9 +16,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.20" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Serilog" Version="3.0.1" />
-    <PackageReference Include="Serilog.Extensions.Hosting" Version="4.1.2" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
     <PackageReference Include="Serilog.Formatting.Compact" Version="1.1.0" />
     <PackageReference Include="Serilog.Formatting.Compact.Reader" Version="2.0.0" />
     <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.0" />
@@ -30,7 +30,7 @@
 
   <ItemGroup>
     <Using Remove="Microsoft.Extensions.Logging" />
-    <InternalsVisibleTo Include="Application.IntegrationTests"/>
+    <InternalsVisibleTo Include="Application.IntegrationTests" />
   </ItemGroup>
   
   <ItemGroup>
