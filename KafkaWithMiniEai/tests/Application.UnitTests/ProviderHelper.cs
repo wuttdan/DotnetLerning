@@ -1,8 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Domain;
-using Infrastructure;
+﻿using Infrastructure;
 using Microsoft.Extensions.Configuration;
-using Serilog.Events;
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
 namespace Application.UnitTests;

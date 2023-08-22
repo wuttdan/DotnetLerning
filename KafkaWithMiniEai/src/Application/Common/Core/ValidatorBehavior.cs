@@ -2,7 +2,6 @@
 using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
-using Newtonsoft.Json.Linq;
 
 namespace Application.Common.Core;
 
@@ -28,7 +27,7 @@ public sealed class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<T
                 {
                     return CreateResponse<TRequest, TResponse>(request, failure);
                 }
-            } 
+            }
         }
         return await next();
     }

@@ -6,9 +6,7 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
-using System.Security.Cryptography;
 using Testcontainers.MsSql;
-using Xunit;
 
 namespace Application.IntegrationTests;
 

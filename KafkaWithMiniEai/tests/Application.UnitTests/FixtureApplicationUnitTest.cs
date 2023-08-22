@@ -1,13 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Application;
-using Infrastructure;
 
 namespace Application.UnitTests;
 

@@ -1,14 +1,9 @@
 ﻿using Application.Common.Core;
-using Application.Common.Interfaces;
-using Application.IntegrationTests;
-using Application.Query.NotifyAppointmentOrder;
-using Application.Query.SendCheckInLate;
 using Application.Util;
-using Serilog;
 
 namespace Application.IntegrationTests.Handler;
 
-public sealed class TestCommitSendCheckInLateHandler: BaseIntergrationTest
+public sealed class TestCommitSendCheckInLateHandler : BaseIntergrationTest
 {
     public TestCommitSendCheckInLateHandler(IntegrationTestWebAppFactory factory)
      : base(factory)

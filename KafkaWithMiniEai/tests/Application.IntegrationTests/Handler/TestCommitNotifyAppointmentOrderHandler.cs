@@ -1,23 +1,13 @@
 ﻿using Application.Common.Core;
-using Application.Common.Models.NotifyAppointmentOrder;
-using Application.Query.NotifyAppointmentOrder;
 using Application.Util;
-using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
-using Xunit;
 
-namespace Application.IntegrationTests;
+namespace Application.IntegrationTests.Handler;
 
 ////https://www.youtube.com/watch?v=tj5ZCtvgXKY
 ////The Best Way To Use Docker For Integration Testing In .NET
-public class CommitNotifyAppointmentOrderHandlerTests : BaseIntergrationTest
+public class TestCommitNotifyAppointmentOrderHandler : BaseIntergrationTest
 {
-    public CommitNotifyAppointmentOrderHandlerTests(IntegrationTestWebAppFactory factory) 
+    public TestCommitNotifyAppointmentOrderHandler(IntegrationTestWebAppFactory factory)
         : base(factory)
     {
     }

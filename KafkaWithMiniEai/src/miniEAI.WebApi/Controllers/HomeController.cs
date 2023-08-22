@@ -18,7 +18,7 @@ public class HomeController : ApiController
     private readonly ICacheValidateRepository _repoVal;
     private readonly ICacheLovRepository _repoLovl;
 
-    public HomeController(ICacheValidateRepository repoVal, 
+    public HomeController(ICacheValidateRepository repoVal,
         ICacheLovRepository repoLovl)
     {
         _repoVal = repoVal;

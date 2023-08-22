@@ -1,8 +1,6 @@
 ﻿using Application.Common.Core;
-using Application.Query.NotifyAppointmentOrder;
 using Application.Query.SendCheckInLate;
 using Newtonsoft.Json;
-using System;
 
 namespace Application.Common.Models.SendCheckInLate;
 

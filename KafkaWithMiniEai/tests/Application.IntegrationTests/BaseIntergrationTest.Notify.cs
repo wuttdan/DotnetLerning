@@ -1,15 +1,11 @@
-﻿using Application.Common.Interfaces;
-using Application.Common.Models.NotifyAppointmentOrder;
+﻿using Application.Common.Models.NotifyAppointmentOrder;
 using Application.Query.NotifyAppointmentOrder;
-using MediatR;
-using Microsoft.Extensions.DependencyInjection;
-using Xunit;
 
 namespace Application.IntegrationTests;
 
 public abstract partial class BaseIntergrationTest : IClassFixture<IntegrationTestWebAppFactory>
 {
-    protected CommitNotifyAppointmentOrderRequestModel TempNotifyInstall => new ()
+    protected CommitNotifyAppointmentOrderRequestModel TempNotifyInstall => new()
     {
         FIBRENET_ID = "8800000000",
         TYPE_OPER_DATE = "YYYY-MM-DD HH:mm:ss",
@@ -46,15 +42,15 @@ public abstract partial class BaseIntergrationTest : IClassFixture<IntegrationTe
             INSTALLATION_LATITUDE = "16.634603",
             INSTALLATION_LONGITUDE = "103.072795",
             JOB_STATE = "Prepare",
-            SERVICE_ONTOP = new() 
-            { 
-                "0VOIP", 
-                "0IPTV" 
+            SERVICE_ONTOP = new()
+            {
+                "0VOIP",
+                "0IPTV"
             },
-            FEE_LIST = new() 
-            { 
+            FEE_LIST = new()
+            {
                 "ค่าธรรมเนียมแรกเข้า 0 บาท",
-                "ค่าธรรมเนียมแรกเข้า 99 บาท" 
+                "ค่าธรรมเนียมแรกเข้า 99 บาท"
             },
             CRM_SUBCONTRACT_REMARKS = new()
             {
@@ -107,9 +103,9 @@ public abstract partial class BaseIntergrationTest : IClassFixture<IntegrationTe
                             STORAGE_LOCATION = "COMPANY 11",
                             VENDOR_CODE = "COMPANY 11",
                             COMPANY_ID = "COMPANY 11",
-                            TEAM_LIST = new() 
-                            { 
-                                new() 
+                            TEAM_LIST = new()
+                            {
+                                new()
                                 {
                                     SHIP_TO = "TEAM 111",
                                     TEAM_NAME = "TEAM 111",

@@ -1,6 +1,5 @@
 ﻿using Application.Common.Core;
 using Application.Query.NotifyAppointmentOrder;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 

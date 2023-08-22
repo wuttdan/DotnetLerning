@@ -3,7 +3,6 @@ using Application.Common.Interfaces;
 using Domain.Entities.Minieai;
 using LazyCache;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories;
 

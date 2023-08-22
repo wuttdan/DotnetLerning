@@ -76,7 +76,7 @@ public sealed class CommitSendCheckInLateHandler : IRequestHandler<CommitSendChe
             HeaderId = headerId,
             MnAppointmentDate = req?.MN_APPOINTMENT_DATE,
             MnSlot = req?.MN_SLOT,
-            MnPackage = req ?.MN_PACKAGE,
+            MnPackage = req?.MN_PACKAGE,
             MnProductName = req?.MN_PRODUCT_NAME,
             MnCustomerName = req?.MN_CUSTOMER_NAME,
             MnCustomerAddress = req?.MN_CUSTOMER_ADDRESS,

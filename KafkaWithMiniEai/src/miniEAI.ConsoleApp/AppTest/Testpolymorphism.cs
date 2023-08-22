@@ -1,8 +1,6 @@
 ﻿using Application.Query.NotifyAppointmentOrder;
-using ConsoleTables;
 using Domain.Extension;
 using miniEAI.ConsoleApp.CoreTest;
-using Newtonsoft.Json.Linq;
 
 namespace miniEAI.ConsoleApp.AppTest;
 

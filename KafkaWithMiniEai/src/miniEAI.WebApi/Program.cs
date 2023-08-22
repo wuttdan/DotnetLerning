@@ -1,13 +1,9 @@
 using Application;
 using Application.Common.Core;
-using Application.Common.Interfaces;
-using Application.Extension;
 using Application.Middleware;
 using Infrastructure;
-using Infrastructure.Persistences;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
 using System.Globalization;
 

@@ -10,7 +10,7 @@ public interface ICacheRepository<T>
 }
 
 
-public interface ICacheLovRepository: ICacheRepository<FbbTblListOfValue>
+public interface ICacheLovRepository : ICacheRepository<FbbTblListOfValue>
 {
 
 }

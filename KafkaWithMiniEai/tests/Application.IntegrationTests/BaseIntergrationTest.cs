@@ -1,10 +1,6 @@
 ﻿using Application.Common.Interfaces;
-using Application.Common.Models.NotifyAppointmentOrder;
-using Application.Query.NotifyAppointmentOrder;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Xunit;
 
 namespace Application.IntegrationTests;
 

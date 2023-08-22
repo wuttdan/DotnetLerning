@@ -1,14 +1,12 @@
 ﻿using Application.Common.Core;
-using Application.Extension;
 using FluentValidation;
-using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 
 namespace Application.Query.SendCheckInLate;
 
 public class CommitSendCheckInLateValidator : AbstractValidator<CommitSendCheckInLateRequestModel>
 {
-   
+
     private readonly List<string> ListValidateProperties = new()
     {
         "MN_INTERNET_ID",

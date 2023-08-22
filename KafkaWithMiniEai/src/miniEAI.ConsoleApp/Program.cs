@@ -31,7 +31,7 @@ static class Program
 
             ////await SimpleRun<TestPrintJson>(provider, args);
             ////await SimpleRun<TestJsonPath>(provider, args);
-            await SimpleRun<Testpolymorphism>(provider, args); 
+            await SimpleRun<Testpolymorphism>(provider, args);
 
             await host.RunAsync();
         }

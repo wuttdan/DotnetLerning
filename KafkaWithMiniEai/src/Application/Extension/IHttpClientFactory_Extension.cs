@@ -1,6 +1,4 @@
-﻿using System.Net.Http;
-
-namespace Application.Extension;
+﻿namespace Application.Extension;
 
 public static class IHttpClientFactory_Extension
 {

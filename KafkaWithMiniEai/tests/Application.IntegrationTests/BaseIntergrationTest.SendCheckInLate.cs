@@ -1,16 +1,10 @@
-﻿using Application.Common.Interfaces;
-using Application.Common.Models.NotifyAppointmentOrder;
-using Application.Query.NotifyAppointmentOrder;
-using Application.Query.SendCheckInLate;
-using MediatR;
-using Microsoft.Extensions.DependencyInjection;
-using Xunit;
+﻿using Application.Query.SendCheckInLate;
 
 namespace Application.IntegrationTests;
 
 public abstract partial class BaseIntergrationTest : IClassFixture<IntegrationTestWebAppFactory>
 {
-    protected CommitSendCheckInLateRequestModel TempSendCheckInLate => new ()
+    protected CommitSendCheckInLateRequestModel TempSendCheckInLate => new()
     {
         MN_TRANSACTION_ID = "SOA202106071906591313_8f36",
         MN_INTERNET_ID = "8850051224",
