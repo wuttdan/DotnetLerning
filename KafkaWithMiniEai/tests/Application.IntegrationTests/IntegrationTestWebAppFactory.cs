@@ -1,4 +1,5 @@
-﻿using Infrastructure.Persistences;
+﻿using Application.Common.Interfaces;
+using Infrastructure.Persistences;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
@@ -35,6 +36,8 @@ public class IntegrationTestWebAppFactory : WebApplicationFactory<Program>, IAsy
     }
     public async Task InitializeAsync()
     {
+        var primaryDb = Services.GetRequiredService<IPrimaryDbContext>();
+        await primaryDb.Db.MigrateAsync();
         await msSqlContainer.StartAsync();
     }
 

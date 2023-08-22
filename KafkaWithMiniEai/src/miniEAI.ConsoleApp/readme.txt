@@ -1,5 +1,6 @@
 dotnet ef dbcontext scaffold "Data Source=localhost\SQLEXPRESS;Initial Catalog=fbbeaitst;Integrated Security=True;MultipleActiveResultSets=True;" Microsoft.EntityFrameworkCore.SqlServer -c MiniEaiDbContext -o Domain -n Domain.Entities.Minieai -d
-
+dotnet ef migrations add InitialMigration -c Infrastructure.Persistences.MiniEaiDbContext
+dotnet ef migrations remove -c Infrastructure.Persistences.MiniEaiDbContext
 
 
 /****** Script for SelectTopNRows command from SSMS  ******/

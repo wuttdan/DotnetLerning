@@ -19,7 +19,7 @@ public static class DependencyInjection
                     primaryDbConnectionString!,
                     b =>
                     {
-                        b.MigrationsAssembly(typeof(MiniEaiDbContext).Assembly.FullName);
+                        b.MigrationsAssembly("miniEAI.WebApi");
                         b.CommandTimeout((int)TimeSpan.FromMinutes(20).TotalSeconds);
                         b.EnableRetryOnFailure(5, TimeSpan.FromMinutes(5.0), null);
                     }));
@@ -28,7 +28,6 @@ public static class DependencyInjection
                 secondaryDbConnectionString!,
                 b =>
                 {
-                    b.MigrationsAssembly(typeof(HvrDbContext).Assembly.FullName);
                     b.CommandTimeout((int)TimeSpan.FromMinutes(20).TotalSeconds);
                     b.EnableRetryOnFailure(5, TimeSpan.FromMinutes(5.0), null);
                 }));

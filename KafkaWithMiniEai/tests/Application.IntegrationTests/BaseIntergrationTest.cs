@@ -2,6 +2,7 @@
 using Application.Common.Models.NotifyAppointmentOrder;
 using Application.Query.NotifyAppointmentOrder;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
@@ -17,6 +18,5 @@ public abstract partial class BaseIntergrationTest : IClassFixture<IntegrationTe
         _scope = factory.Services.CreateScope();
         Sender = _scope.ServiceProvider.GetRequiredService<ISender>();
         PrimaryDb = _scope.ServiceProvider.GetRequiredService<IPrimaryDbContext>();
-        PrimaryDb.Db.EnsureCreated();
     }
 }
