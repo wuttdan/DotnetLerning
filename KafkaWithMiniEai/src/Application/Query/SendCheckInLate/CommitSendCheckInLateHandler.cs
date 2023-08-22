@@ -62,7 +62,7 @@ public sealed class CommitSendCheckInLateHandler : IRequestHandler<CommitSendChe
             LastUpdDate = DateTime.Now,
             ServerName = Dns.GetHostName()
         };
-        _primaryDb.FbbTblEvsendchecklateHeaders.Add(header);
+        _primaryDb.FbbTblEvSendChecklateHeaders.Add(header);
         _primaryDb.SaveChanges();
         return header.Id;
     }
@@ -104,7 +104,7 @@ public sealed class CommitSendCheckInLateHandler : IRequestHandler<CommitSendChe
             LastUpd = req?.AppSource,
             LastUpdDate = DateTime.Now
         };
-        _primaryDb.FbbTblEvsendchecklateDetails.Add(detail);
+        _primaryDb.FbbTblEvSendChecklateDetails.Add(detail);
         _primaryDb.SaveChanges();
     }
 

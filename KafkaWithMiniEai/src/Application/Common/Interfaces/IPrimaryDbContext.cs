@@ -28,8 +28,8 @@ public interface IPrimaryDbContext : IBaseDbContext
     DbSet<FbbTblEvNotifyAppointmentStaff> FbbTblEvNotifyAppointmentStaffs { get; set; }
     DbSet<FbbTblEvNotifyAppointmentTeam> FbbTblEvNotifyAppointmentTeams { get; set; }
     DbSet<FbbTblEvNotifyAppointmentWfm> FbbTblEvNotifyAppointmentWfms { get; set; }
-    DbSet<FbbTblEvSendChecklateDetail> FbbTblEvsendchecklateDetails { get; set; }
-    DbSet<FbbTblEvSendChecklateHeader> FbbTblEvsendchecklateHeaders { get; set; }
+    DbSet<FbbTblEvSendChecklateDetail> FbbTblEvSendChecklateDetails { get; set; }
+    DbSet<FbbTblEvSendChecklateHeader> FbbTblEvSendChecklateHeaders { get; set; }
     DbSet<FbbTblExceptionError> FbbTblExceptionErrors { get; set; }
     DbSet<FbbTblListOfValue> FbbTblListOfValues { get; set; }
     DbSet<FbbTblLogging> FbbTblLoggings { get; set; }

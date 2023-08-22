@@ -36,8 +36,8 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
     public virtual DbSet<FbbTblEvNotifyAppointmentStaff> FbbTblEvNotifyAppointmentStaffs { get; set; } = null!;
     public virtual DbSet<FbbTblEvNotifyAppointmentTeam> FbbTblEvNotifyAppointmentTeams { get; set; } = null!;
     public virtual DbSet<FbbTblEvNotifyAppointmentWfm> FbbTblEvNotifyAppointmentWfms { get; set; } = null!;
-    public virtual DbSet<FbbTblEvSendChecklateDetail> FbbTblEvsendchecklateDetails { get; set; } = null!;
-    public virtual DbSet<FbbTblEvSendChecklateHeader> FbbTblEvsendchecklateHeaders { get; set; } = null!;
+    public virtual DbSet<FbbTblEvSendChecklateDetail> FbbTblEvSendChecklateDetails { get; set; } = null!;
+    public virtual DbSet<FbbTblEvSendChecklateHeader> FbbTblEvSendChecklateHeaders { get; set; } = null!;
     public virtual DbSet<FbbTblExceptionError> FbbTblExceptionErrors { get; set; } = null!;
     public virtual DbSet<FbbTblListOfValue> FbbTblListOfValues { get; set; } = null!;
     public virtual DbSet<FbbTblLogging> FbbTblLoggings { get; set; } = null!;
