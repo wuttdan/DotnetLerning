@@ -34,9 +34,8 @@ public class CommitNotifyAppointmentOrderValidator : AbstractValidator<CommitNot
             .WithMessage("'INSTALL_ORDER' and 'MA_ORDER' should not be dual null or empty.");
     }
 
-    private bool ValidateInstallOrderAndMaOrder(object args)
+    private bool ValidateInstallOrderAndMaOrder(CommitNotifyAppointmentOrderRequestModel req)
     {
-        var req = args as CommitNotifyAppointmentOrderRequestModel;
         if (req?.MA_ORDER == null && req?.INSTALL_ORDER == null)
         {
             return false;

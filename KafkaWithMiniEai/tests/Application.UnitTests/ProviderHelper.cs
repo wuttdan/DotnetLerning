@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Domain;
-using Application;
 using Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Serilog.Events;
 using Serilog;
 
-namespace Application.UnitTests.Helper;
+namespace Application.UnitTests;
 
 public static class ProviderHelper
 {

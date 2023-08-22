@@ -2,18 +2,16 @@
 using Application.Common.Interfaces;
 using Application.Query.NotifyAppointmentOrder;
 using Application.Query.SendCheckInLate;
-using Application.UnitTests.Helper;
 using Application.Util;
 using Serilog;
 
 namespace Application.UnitTests.Handler;
 
-public sealed class TestCommitSendCheckInLateHandler
+public sealed class TestCommitSendCheckInLateHandler: BaseApplicationUnitTest
 {
     private CommitSendCheckInLateHandler handler;
-
-    [SetUp]
-    public void Setup()
+    public TestCommitSendCheckInLateHandler(FixtureApplicationUnitTest appFixture) 
+        : base(appFixture)
     {
         // Arrange
         var logger = ProviderHelper.GetRequireService<ILogger>();
@@ -21,7 +19,7 @@ public sealed class TestCommitSendCheckInLateHandler
         handler = new CommitSendCheckInLateHandler(logger, primaryDb);
     }
 
-    [Test]
+    [Fact]
     public void Should_Pass_FullProperty()
     {
         var header = new RequestHeader
@@ -63,7 +61,7 @@ public sealed class TestCommitSendCheckInLateHandler
         req.Header = header;
 
         var lateMin = handler.GetLateDuration(req?.MN_APPOINTMENT_DATE, req?.MN_SLOT, req?.MN_CHECKIN_LATE_TIME);
-        Assert.That("60", Is.EqualTo(lateMin));
+        Assert.Equal("60", lateMin);
         ////
         //////act
         ////var response = handler.Handle(request, CancellationToken.None).Result;

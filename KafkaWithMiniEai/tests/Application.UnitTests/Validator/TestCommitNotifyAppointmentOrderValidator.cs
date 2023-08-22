@@ -1,9 +1,9 @@
 ﻿using Application.Common.Interfaces;
 using Application.Common.Models.NotifyAppointmentOrder;
 using Application.Query.NotifyAppointmentOrder;
-using Application.UnitTests.Helper;
 using FluentValidation.TestHelper;
 using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Rewrite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,21 +13,19 @@ using System.Threading.Tasks;
 
 namespace Application.UnitTests.Validator;
 
-public sealed class TestCommitNotifyAppointmentOrderValidator
+public sealed class TestCommitNotifyAppointmentOrderValidator : BaseApplicationUnitTest
 {
 	private CommitNotifyAppointmentOrderValidator validator;
-
-	[SetUp]
-	public void Setup()
-	{
+    public TestCommitNotifyAppointmentOrderValidator(FixtureApplicationUnitTest appFixture)
+        : base(appFixture)
+    {
 		// Arrange
 		validator = new CommitNotifyAppointmentOrderValidator();
 	}
 
-	[Test]
+	[Fact]
     public void Should_Error_when_FibrenetId_is_NullOrEmpty()
     {
-
 		// Arrange
 		var req = new CommitNotifyAppointmentOrderRequestModel
 		{
@@ -46,7 +44,7 @@ public sealed class TestCommitNotifyAppointmentOrderValidator
 		result.ShouldHaveValidationErrorFor(req => req.FIBRENET_ID);
 	}
 
-	[Test]
+	[Fact]
 	public void Should_Error_when_Type_is_NullOrEmpty()
 	{
 
@@ -64,7 +62,7 @@ public sealed class TestCommitNotifyAppointmentOrderValidator
 		result.ShouldHaveValidationErrorFor(req => req.TYPE);
 	}
 
-	[Test]
+	[Fact]
 	public void Should_Error_when_TypeOperDate_is_NullOrEmpty()
 	{
 
@@ -83,7 +81,7 @@ public sealed class TestCommitNotifyAppointmentOrderValidator
 		result.ShouldHaveValidationErrorFor(req => req.TYPE_OPER_DATE);
 	}
 
-	[Test]
+	[Fact]
 	public void Should_Error_when_MsgSeqId_is_NullOrEmpty()
 	{
 
@@ -103,7 +101,7 @@ public sealed class TestCommitNotifyAppointmentOrderValidator
 		result.ShouldHaveValidationErrorFor(req => req.MSG_SEQ_ID);
 	}
 
-	[Test]
+	[Fact]
 	public void Should_Error_when_MaOrderInstallOrder_is_NullOrEmpty()
 	{
 
@@ -123,12 +121,12 @@ public sealed class TestCommitNotifyAppointmentOrderValidator
 
 		// Assert
 		result.ShouldHaveAnyValidationError();
-		Assert.IsFalse(result.IsValid);
-        Assert.That("'INSTALL_ORDER' and 'MA_ORDER' should not be dual null or empty.", Is.EqualTo(result.Errors.Single().ErrorMessage));
-		Assert.That("40007", Is.EqualTo(result.Errors.Single().ErrorCode));
+		Assert.Equal(false, result?.IsValid);
+        Assert.Equal("'INSTALL_ORDER' and 'MA_ORDER' should not be dual null or empty.", result?.Errors.Single().ErrorMessage);
+		Assert.Equal("40007", result?.Errors.Single().ErrorCode);
 	}
 
-	[Test]
+	[Fact]
 	public void Should_Pass_when_MaOrder_is_New()
 	{
 
@@ -146,10 +144,10 @@ public sealed class TestCommitNotifyAppointmentOrderValidator
 		var result = validator.TestValidate(req);
 
 		// Assert
-		Assert.That(result.IsValid, Is.True);
+		Assert.Equal(true, result?.IsValid);
 	}
 
-	[Test]
+	[Fact]
 	public void Should_Pass_when_InstallOrder_is_New()
 	{
 
@@ -166,8 +164,8 @@ public sealed class TestCommitNotifyAppointmentOrderValidator
 		// Act
 		var result = validator.TestValidate(req);
 
-		// Assert
-		Assert.That(result.IsValid, Is.True);
+        // Assert
+        Assert.Equal(true, result?.IsValid);
 	}
 }
 

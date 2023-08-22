@@ -4,6 +4,7 @@ namespace Application.Common.Core;
 public static class AppConstant
 {
     public static readonly string SystemName = "minieai";
+    public static readonly string DefValidateErrorFormat = "'{0}' should not be dual null or empty.";
 
     public static class DateTimeFormat
     {
