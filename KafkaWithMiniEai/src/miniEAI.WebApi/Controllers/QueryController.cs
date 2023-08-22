@@ -45,6 +45,13 @@ public sealed class QueryController : ApiController
         return await Mediator.Send(body, cancellationToken);
     }
 
+    [HttpPost("/api/Microsite/Update")]
+    public async Task<ResponseBase> MicrositeUpdate([FromHeader] RequestHeader header, [FromBody] CommitMicrositeUpdateRequestModel body, CancellationToken cancellationToken)
+    {
+        body.Header = header;
+        return await Mediator.Send(body, cancellationToken);
+    }
+
     [HttpPost("/api/acimuser")]
     [HttpPut("/api/acimuser")]
     [HttpPost("/api/acimuser/del")]
