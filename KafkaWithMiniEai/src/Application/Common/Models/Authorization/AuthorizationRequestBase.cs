@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using Application.Common.Core;
+using Newtonsoft.Json;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Application.Common.Models.Authorization;
 
-public class AuthorizationRequestBase
+public class AuthorizationRequestBase : CommonRequestModel
 {
     public AuthorizationRequestHeader? Header { get; set; }
     /// <summary>

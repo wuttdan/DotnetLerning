@@ -1,4 +1,5 @@
 ﻿using Application.Common.Core;
+using Application.Query;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +14,8 @@ public static class DependencyInjection
     {
         services.AddMediatR(_ => _.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
-        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddValidatorsFromAssemblyContaining<CommonRequestHeaderValidator>();
+        ////services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>));
     }
 }

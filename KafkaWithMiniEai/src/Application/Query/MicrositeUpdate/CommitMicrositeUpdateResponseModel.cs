@@ -2,6 +2,6 @@
 
 namespace Application.Query.Microsite;
 
-public class CommitMicrositeUpdateResponseModel : ResponseBase
+public sealed class CommitMicrositeUpdateResponseModel : CommonResponseModel
 {
 }

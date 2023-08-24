@@ -9,7 +9,7 @@
 
         public int Id { get; set; }
         public string TypeEvent { get; set; } = null!;
-        public string AppSoucre { get; set; } = null!;
+        public string AppSource { get; set; } = null!;
         public string ResponseTime { get; set; } = null!;
         public string? Created { get; set; }
         public DateTime? CreatedDate { get; set; }

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Application.Common.Models.NotifyAppointmentOrder;
 
-public class NotifyAppointmentOrderRequestBase : RequestBase
+public class NotifyAppointmentOrderRequestBase : CommonRequestModel
 {
     [FromBody]
     [JsonProperty(Order = -4)]
@@ -30,18 +30,6 @@ public class NotifyAppointmentOrderRequestBase : RequestBase
     [FromBody]
     [JsonProperty(Order = 1, NullValueHandling = NullValueHandling.Ignore)]
     public NotifyAppointmentOrderMA? MA_ORDER { get; set; }
-
-    public CommitNotifyAppointmentOrderResponseModel CreateResponse(string resultDesc = "", string resultCode = "")
-    {
-        return new CommitNotifyAppointmentOrderResponseModel
-        {
-            TRANSACTION_ID = TransactionId,
-            FIBRENET_ID = FIBRENET_ID,
-            TYPE = TYPE,
-            RESULT_CODE = resultCode,
-            RESULT_DESC = resultDesc
-        };
-    }
 
     public DecomposeNotifyAppointmentOrderRequestModel ToDecompose()
     {

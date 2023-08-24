@@ -2,6 +2,6 @@
 
 namespace Application.Query.Microsite;
 
-public class WorkorderMicrositeUpdateResponseModel : ResponseBase
+public sealed class WorkorderMicrositeUpdateResponseModel : CommonResponseModel
 {
 }

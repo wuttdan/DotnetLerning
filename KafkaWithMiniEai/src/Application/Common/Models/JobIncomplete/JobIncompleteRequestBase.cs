@@ -2,7 +2,7 @@
 
 namespace Application.Common.Models.JobIncomplete;
 
-public class JobIncompleteRequestBase : RequestBase
+public class JobIncompleteRequestBase : CommonRequestModel
 {
     public string? internetNo { get; set; }
     public string? orderNo { get; set; }

@@ -1925,10 +1925,10 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
 
             entity.Property(e => e.Id).HasColumnName("ID");
 
-            entity.Property(e => e.AppSoucre)
+            entity.Property(e => e.AppSource)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasColumnName("APP_SOUCRE");
+                .HasColumnName("APP_SOURCE");
 
             entity.Property(e => e.Created)
                 .HasMaxLength(50)
@@ -2034,9 +2034,9 @@ public partial class MiniEaiDbContext : BaseDbContext, IPrimaryDbContext
                 .HasMaxLength(100)
                 .HasColumnName("TYPE_EVENT");
 
-            entity.Property(e => e.AppSoucre)
+            entity.Property(e => e.AppSource)
                 .HasMaxLength(50)
-                .HasColumnName("APP_SOUCRE");
+                .HasColumnName("APP_SOURCE");
 
             entity.Property(e => e.ConstraintValidate)
                 .HasMaxLength(50)

@@ -1,7 +1,12 @@
-﻿using Application.Query.NotifyAppointmentOrder;
+﻿using Application.Common.Interfaces;
+using Application.Query.NotifyAppointmentOrder;
+using Application.Query.SendCheckInLate;
+using Domain.Extension;
 using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel;
 
 namespace Application.Common.Core;
 
@@ -25,7 +30,8 @@ public sealed class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<T
                 var failure = failures.FirstOrDefault();
                 if (failure != null)
                 {
-                    return CreateResponse<TRequest, TResponse>(request, failure);
+                    var res = CreateResponse<TRequest, TResponse>(request, failure);
+                    return res;
                 }
             }
         }
@@ -34,27 +40,22 @@ public sealed class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<T
 
     private TResponseModel CreateResponse<TRequestModel, TResponseModel>(TRequestModel request, ValidationFailure failure)
     {
-        ResponseBase res = null!;
-        ////if (request is CommitNotifyAppointmentOrderRequestModel)
-        ////{
-        ////    var req = request as CommitNotifyAppointmentOrderRequestModel;
-        ////    res = new CommitNotifyAppointmentOrderResponseModel
-        ////    {
-        ////        TRANSACTION_ID = req?.TransactionId,
-        ////        RESULT_CODE = failure.ErrorCode,
-        ////        RESULT_DESC = failure.ErrorMessage,
-        ////        FIBRENET_ID = req?.FIBRENET_ID,
-        ////        TYPE = req?.TYPE
-        ////    }; 
-        ////}
+        var res = (TResponseModel)Activator.CreateInstance(typeof(TResponseModel));
         Type type = request!.GetType();
         switch (type)
         {
             case Type _ when type == typeof(CommitNotifyAppointmentOrderRequestModel):
-                var req = request as CommitNotifyAppointmentOrderRequestModel;
-                res = req?.CreateResponse(failure.ErrorMessage, failure.ErrorCode) ?? new CommitNotifyAppointmentOrderResponseModel();
+                var req1 = request as CommitNotifyAppointmentOrderRequestModel;
+                var res1 = req1.CreateResponse(failure.ErrorMessage, failure.ErrorCode) as CommitNotifyAppointmentOrderResponseModel;
+                res.SetAllProperties(res1);
+                break;
+
+            case Type _ when type == typeof(CommitSendCheckInLateRequestModel):
+                var req2 = request as CommitSendCheckInLateRequestModel;
+                var res2 = req2?.CreateResponse(failure.ErrorMessage, failure.ErrorCode);
+                res.SetAllProperties(res2);
                 break;
         }
-        return (TResponseModel)Convert.ChangeType(res, typeof(TResponseModel));
+        return res;
     }
 }

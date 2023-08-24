@@ -2,7 +2,7 @@
 
 namespace Application.Common.Models.JobApprove;
 
-public class JobApproveRequestBase : RequestBase
+public class JobApproveRequestBase : CommonRequestModel
 {
     public string? internetNo { get; set; }
     public string? orderNo { get; set; }

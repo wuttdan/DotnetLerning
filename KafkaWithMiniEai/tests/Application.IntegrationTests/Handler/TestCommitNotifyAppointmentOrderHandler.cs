@@ -16,33 +16,30 @@ public class TestCommitNotifyAppointmentOrderHandler : BaseIntergrationTest
     public async Task Commit_ShouldThrowValidateException_WhenFibrenetIdEmpty()
     {
         //Arrange
-        var req = TempNotifyInstall;
+        var req = GetTempNotifyInstall();
         req.FIBRENET_ID = "";
 
         //Act
-        async Task Action() => Sender.Send(req);
+        var res = await Mediator.Send(req);
 
-        //Assertq
-        await Assert.ThrowsAsync<ValidationException>(Action);
+        //Assert
+        Assert.Equal(req.TransactionId, res.TRANSACTION_ID);
+        Assert.Equal("40003", res.RESULT_CODE);
+        Assert.Equal("'FIBRENET_ID' parameter(s) should not be null or empty.", res.RESULT_DESC);
     }
 
     [Fact]
     public async Task Commit_ShouldAddNewRecord_WhenRequestIsValid()
     {
         //Arrange
-        var req = TempNotifyInstall;
-        req.Header = new RequestHeader
-        {
-            TransactionId = GenUtil.GenTransactionId("IT"),
-            AppSource = "UnitTest",
-            AppDestination = "MiniEAI"
-        };
+        var req = GetTempNotifyInstall();
 
         //Act
-        Task Action() => Sender.Send(req);
+        var res = await Mediator.Send(req);
 
         //Assertq
-        var header = PrimaryDb.FbbTblEvNotifyAppointmentHeaders.FirstOrDefault(x => x.TransactionId == req.TransactionId);
-        Assert.NotNull(header);
+        Assert.Equal(req.TransactionId, res.TRANSACTION_ID);
+        Assert.Equal("20000", res.RESULT_CODE);
+        Assert.Equal("Success", res.RESULT_DESC, true);
     }
 }

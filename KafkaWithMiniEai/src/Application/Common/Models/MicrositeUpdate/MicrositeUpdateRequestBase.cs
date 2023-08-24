@@ -2,7 +2,7 @@
 
 namespace Application.Common.Models.Microsite;
 
-public class MicrositeUpdateRequestBase : RequestBase
+public class MicrositeUpdateRequestBase : CommonRequestModel
 {
     public string? ORDER_NO { get; set; }
     public string? ORDER_CHANNEL { get; set; }

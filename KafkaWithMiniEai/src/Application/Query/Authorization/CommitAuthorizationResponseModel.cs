@@ -1,7 +1,8 @@
-﻿using Application.Common.Models.Authorization;
+﻿using Application.Common.Core;
+using Application.Common.Models.Authorization;
 
 namespace Application.Query.Authorization;
 
-public sealed class CommitAuthorizationResponseModel : AuthorizationResponseBase
+public sealed class CommitAuthorizationResponseModel : CommonResponseModel
 {
 }

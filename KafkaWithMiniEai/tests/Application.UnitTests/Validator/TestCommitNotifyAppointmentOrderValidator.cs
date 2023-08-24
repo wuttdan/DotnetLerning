@@ -1,4 +1,5 @@
 ﻿using Application.Common.Models.NotifyAppointmentOrder;
+using Application.Query;
 using Application.Query.NotifyAppointmentOrder;
 
 namespace Application.UnitTests.Validator;

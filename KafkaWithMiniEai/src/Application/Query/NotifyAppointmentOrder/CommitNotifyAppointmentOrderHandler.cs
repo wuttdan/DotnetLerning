@@ -13,7 +13,8 @@ public sealed class CommitNotifyAppointmentOrderHandler : IRequestHandler<Commit
     private readonly ILogger _logger;
     private readonly IPrimaryDbContext _primaryDb;
 
-    public CommitNotifyAppointmentOrderHandler(ILogger logger, IPrimaryDbContext primaryDb)
+    public CommitNotifyAppointmentOrderHandler(ILogger logger, 
+        IPrimaryDbContext primaryDb)
     {
         _logger = logger;
         _primaryDb = primaryDb;
@@ -68,7 +69,7 @@ public sealed class CommitNotifyAppointmentOrderHandler : IRequestHandler<Commit
                 }
             }
         });
-        return Task.FromResult(result);
+        return Task.FromResult((CommitNotifyAppointmentOrderResponseModel)result);
     }
 
     private void InsertStaffsAndCompaniesAndTeams(long orderId, List<NotifyAppointmentOrderStaff>? staffs, string appSource)

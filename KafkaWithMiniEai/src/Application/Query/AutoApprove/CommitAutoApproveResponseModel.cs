@@ -1,7 +1,8 @@
-﻿using Application.Common.Models.AutoApprove;
+﻿using Application.Common.Core;
+using Application.Common.Models.AutoApprove;
 
 namespace Application.Query.AutoApprove;
 
-public sealed class CommitAutoApproveResponseModel : AutoApproveResponseBase
+public sealed class CommitAutoApproveResponseModel : CommonResponseModel
 {
 }

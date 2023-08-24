@@ -7,6 +7,8 @@ public class CommitNotifyAppointmentOrderValidator : AbstractValidator<CommitNot
 {
     public CommitNotifyAppointmentOrderValidator()
     {
+        RuleFor(x => x.Header).SetValidator(new CommonRequestHeaderValidator());
+
         RuleFor(x => x.FIBRENET_ID)
             .NotNull().NotEmpty()
             .WithErrorCode("40003")

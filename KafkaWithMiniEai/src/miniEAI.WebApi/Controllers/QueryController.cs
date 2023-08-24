@@ -21,7 +21,8 @@ public sealed class QueryController : ApiController
     public async Task<ResponseBase> ExecuteV1([FromHeader] RequestHeader header, [FromBody] EventRequestV1Model body, CancellationToken cancellationToken)
     {
         var sendCheckInLate = body.AsSendCheckInLate(header);
-        return await Mediator.Send(sendCheckInLate, cancellationToken);
+        var res = await Mediator.Send(sendCheckInLate, cancellationToken);
+        return res;
     }
 
     [HttpPost("/api/NotifyAppointmentOrder")]

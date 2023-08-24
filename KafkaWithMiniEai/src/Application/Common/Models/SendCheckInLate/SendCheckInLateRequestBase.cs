@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Application.Common.Models.SendCheckInLate;
 
-public class SendCheckInLateRequestBase : RequestBase
+public class SendCheckInLateRequestBase : CommonRequestModel
 {
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
     public string? MN_TRANSACTION_ID { get; set; }
@@ -35,14 +35,4 @@ public class SendCheckInLateRequestBase : RequestBase
     public string? MN_CURRENT_LONGITUDE { get; set; }
     public string? MN_CREATE_DATE { get; set; }
     public string? MN_CREATED_BY { get; set; }
-
-    public CommitSendCheckInLateResponseModel CreateResponse(string resultDesc = "", string resultCode = "")
-    {
-        return new CommitSendCheckInLateResponseModel
-        {
-            TRANSACTION_ID = TransactionId,
-            RESULT_CODE = resultCode,
-            RESULT_DESC = resultDesc
-        };
-    }
 }

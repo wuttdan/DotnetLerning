@@ -2,7 +2,7 @@
 
 namespace Application.Common.Models.Microsite;
 
-public class MicrositeRequestBase : RequestBase
+public class MicrositeRequestBase : CommonRequestModel
 {
     public string? USER { get; set; }
     public string? SEGMENT { get; set; }

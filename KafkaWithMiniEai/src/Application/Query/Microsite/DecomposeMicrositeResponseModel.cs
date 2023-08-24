@@ -2,6 +2,6 @@
 
 namespace Application.Query.Microsite;
 
-public class DecomposeMicrositeResponseModel : ResponseBase
+public sealed class DecomposeMicrositeResponseModel : CommonResponseModel
 {
 }

@@ -6,16 +6,26 @@ namespace Application.Common.Core;
 
 public sealed class RequestHeader : BracketModel
 {
+    public const string XTransactionId = "Transaction-Id";
+    public const string XAppSource = "App-Source";
+    public const string XAppDestination = "App-Destination";
+    public const string XContentType = "Content-Type";
+
     [JsonIgnore]
-    [FromHeader(Name = "Transaction-Id")]
+    [FromHeader(Name = XTransactionId)]
     public string? TransactionId { get; set; }
+
     [JsonIgnore]
-    [FromHeader(Name = "App-Source")]
+    [FromHeader(Name = XAppSource)]
     public string? AppSource { get; set; }
+
     [JsonIgnore]
-    [FromHeader(Name = "App-Destination")]
+    [FromHeader(Name = XAppDestination)]
     public string? AppDestination { get; set; }
 
+    [JsonIgnore]
+    [FromHeader(Name = XContentType)]
+    public string? ContentType { get; set; }
 
     private string? _Token;
     [JsonIgnore]
