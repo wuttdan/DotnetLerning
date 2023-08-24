@@ -47,9 +47,9 @@ public sealed class CommitMicrositeUpdateValidator : AbstractValidator<CommitMic
             .WithErrorCode("40008")
             .WithMessage(x => this.WithErrorMessage(nameof(x.STATUS_ORDER)));
 
-        //RuleFor(x => x.REMARK_NOTE)
-        //    .NotNull().NotEmpty()
-        //    .WithErrorCode("40009")
-        //    .WithMessage(x => this.WithErrorMessage(nameof(x.REMARK_NOTE)));
+        ////RuleFor(x => x.REMARK_NOTE)
+        ////    .NotNull().NotEmpty()
+        ////    .WithErrorCode("40009")
+        ////    .WithMessage(x => this.WithErrorMessage(nameof(x.REMARK_NOTE)));
     }
 }

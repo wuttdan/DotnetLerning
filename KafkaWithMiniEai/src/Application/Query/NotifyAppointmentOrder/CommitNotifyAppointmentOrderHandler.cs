@@ -371,7 +371,7 @@ public sealed class CommitNotifyAppointmentOrderHandler : IRequestHandler<Commit
         return order.Id;
     }
 
-    private long InsertMaOrder(long headerId, NotifyAppointmentOrderMA OrderMa, string appSource)
+    private long InsertMaOrder(long headerId, NotifyAppointmentOrderMa OrderMa, string appSource)
     {
         var order = new FbbTblEvNotifyAppointmentOrder
         {

@@ -2,7 +2,7 @@
 
 namespace Application.Common.Models.NotifyAppointmentOrder;
 
-public sealed class NotifyAppointmentOrderMA : NotifyAppointmentOrderType
+public sealed class NotifyAppointmentOrderMa : NotifyAppointmentOrderType
 {
     public string? TROUBLE_TICKET_NO { get; set; }
     public string? SIEBEL_REQUEST_NO { get; set; }

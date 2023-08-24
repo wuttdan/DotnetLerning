@@ -264,4 +264,245 @@ public abstract partial class BaseApplicationUnitTest
                 }
             }//install
         };
+
+    protected CommitNotifyAppointmentOrderRequestModel GetTempNotifyMa() => new()
+    {
+        Header = GetCommonRequestHeader(),
+        FIBRENET_ID = "8800000000",
+        TYPE_OPER_DATE = "YYYY-MM-DD HH:mm:ss",
+        MSG_SEQ_ID = "0000",
+        TYPE = "AAAAAAAAA",
+        MA_ORDER = new NotifyAppointmentOrderMa
+        {
+            TROUBLE_TICKET_NO = "SRT2019101500130149",
+            SIEBEL_REQUEST_NO = "JS171222FTTH02",
+            TASK_ORDER_NO = "200511100007482708",
+            FIBRENET_ID = "8800532713",
+            JOB_STATE = "Prepare",
+            JOB_PRIORITY = "Normal Job",
+            PRODUCT_NAME = "FTTH/Playbox/VoIP",
+            SERVICE = "FTTH",
+            ACCESS_MODE = "FTTH",
+            DOWNLINK_RATE = "100Mbps",
+            UPLINK_RATE = "100Mbps",
+            COMMIT_DATE = "2022-03-17 14:00:00",
+            ACCEPT_DATE = "2022-03-07 14:00:00",
+            TROUBLE_SYMPTOM = "FTTH – ลูกค้า Request ขออุปกรณ์ Access point (Edimax) ของ AIS Fibre",
+            COMPLAINT_TITLE = "FTTH – ลูกค้า Request ขออุปกรณ์ Access point (Edimax) ของ AIS Fibre",
+            CUSTOMER_COMPLAINT_NAME = "Sineeral",
+            CUSTOMER_COMPLAINT_MOBILE = "",
+            NOC_REMARK = "",
+            NOC_NUMBER = "020789204",
+            DETAILS_FOR_RESOLVED = "2018030700021232",
+            COMPLAINT_DESCRIPTION = "FTTH – L2 – (Request) Customer Request Access Point (Edimax)",
+            CUSTOMER_NAME = "Wutt Dan",
+            CONTACT_PERSON_NAME = "Wutt Dan",
+            CONTACT_MOBILE_PHONE1 = "191",
+            CONTACT_MOBILE_PHONE2 = "192",
+            CONTACT_MOBILE_PHONE3 = "193",
+            APPOINTMENT_DATE = "2018-12-13",
+            APPOINTMENT_TIMESLOT = "12:30-15:30",
+            INSTALLATION_ADDRESS = "789/472 อาคารดี คอนโด นคร ระยอง ซี ชั้น5 เนินพระ เมืองระยอง ระยอง 21150",
+            INSTALLATION_LATITUDE = "99.99999",
+            INSTALLATION_LONGITUDE = "99.99999",
+            SERVICE_PACK = "SERVICE_PACKAGE SERVICE_PACKAGE",
+            SERVICE_LEVEL = "FMC",
+            ONTOP_PACK = "ONTOP_PACKAGE ONTOP_PACKAGE",
+            PLAYBOX_CONTENT = "PLAYBOX_CONTENT PLAYBOX_CONTENT",
+            WFM_SUBCONTRACT_REMARKS = new()
+                {
+                    new()
+                    {
+                        REMARK_DATE = "2020-12-25 16:55:19",
+                        AUTHOR = "WFMRemark",
+                        SUBCONTRACT_REMARKS = "ฝากหากล่องเครื่องมาด้วยนะคับ พอดีที่ออฟฟิสไม่มีให้",
+                    },
+                    new()
+                    {
+                        REMARK_DATE = "9999-09-27 00:00:00",
+                        AUTHOR = "Admin",
+                        SUBCONTRACT_REMARKS = "Black Lives Matter is an international human rights movement.",
+                    }
+                },
+            STAFF_LIST = new()
+                {
+                    new()
+                    {
+                        STAFF_PROFILE_PICTURE_FILENAME = "STAFF 1",
+                        STAFF_LONGITUDE = "STAFF 1",
+                        STAFF_PHONE = "STAFF 1",
+                        STAFF_ROLE = "STAFF 1",
+                        STAFF_NAME = "STAFF 1",
+                        STAFF_LATITUDE = "STAFF 1",
+                        STAFF_CODE = "STAFF 1",
+                        STAFF_EMAIL = "STAFF 1",
+                        COMPANY_LIST = new()
+                        {
+                            new()
+                            {
+                                COMPANY_NAME = "COMPANY 11",
+                                LOCATION_CODE = "COMPANY 11",
+                                STORAGE_LOCATION = "COMPANY 11",
+                                VENDOR_CODE = "COMPANY 11",
+                                COMPANY_ID = "COMPANY 11",
+                                TEAM_LIST = new()
+                                {
+                                    new()
+                                    {
+                                        SHIP_TO = "TEAM 111",
+                                        TEAM_NAME = "TEAM 111",
+                                        LOCATION_CODE = "TEAM 111",
+                                        STORAGE_LOCATION = "TEAM 111",
+                                        VENDOR_CODE = "TEAM 111",
+                                        TEAM_SERVICE = "TEAM 111",
+                                        TEAM_ID = "TEAM 111"
+                                    },
+                                    new()
+                                    {
+                                        SHIP_TO = "TEAM 112",
+                                        TEAM_NAME = "TEAM 112",
+                                        LOCATION_CODE = "TEAM 112",
+                                        STORAGE_LOCATION = "TEAM 112",
+                                        VENDOR_CODE = "TEAM 112",
+                                        TEAM_SERVICE = "TEAM 112",
+                                        TEAM_ID = "TEAM 112"
+                                    }
+                                }
+                            },
+                            new ()
+                            {
+                                COMPANY_NAME = "COMPANY 12",
+                                LOCATION_CODE = "COMPANY 12",
+                                STORAGE_LOCATION = "COMPANY 12",
+                                VENDOR_CODE = "COMPANY 12",
+                                COMPANY_ID = "COMPANY 12",
+                                TEAM_LIST = new()
+                                {
+                                    new()
+                                    {
+                                        SHIP_TO = "TEAM 121",
+                                        TEAM_NAME = "TEAM 121",
+                                        LOCATION_CODE = "TEAM 121",
+                                        STORAGE_LOCATION = "TEAM 121",
+                                        VENDOR_CODE = "TEAM 121",
+                                        TEAM_SERVICE = "TEAM 121",
+                                        TEAM_ID = "TEAM 121"
+                                    },
+                                    new()
+                                    {
+                                        SHIP_TO = "TEAM 122",
+                                        TEAM_NAME = "TEAM 122",
+                                        LOCATION_CODE = "TEAM 122",
+                                        STORAGE_LOCATION = "TEAM 122",
+                                        VENDOR_CODE = "TEAM 122",
+                                        TEAM_SERVICE = "TEAM 122",
+                                        TEAM_ID = "TEAM 122"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    //staff[0]
+                    new NotifyAppointmentOrderStaff
+                    {
+                        STAFF_PROFILE_PICTURE_FILENAME = "STAFF 2",
+                        STAFF_LONGITUDE = "STAFF 2",
+                        STAFF_PHONE = "STAFF 2",
+                        STAFF_ROLE = "STAFF 2",
+                        STAFF_NAME = "STAFF 2",
+                        STAFF_LATITUDE = "STAFF 2",
+                        STAFF_CODE = "STAFF 2",
+                        STAFF_EMAIL = "STAFF 2",
+                        COMPANY_LIST = new()
+                        {
+                            new ()
+                            {
+                                COMPANY_NAME = "COMPANY 21",
+                                LOCATION_CODE = "COMPANY 21",
+                                STORAGE_LOCATION = "COMPANY 21",
+                                VENDOR_CODE = "COMPANY 21",
+                                COMPANY_ID = "COMPANY 21",
+                                TEAM_LIST = new()
+                                {
+                                    new()
+                                    {
+                                        SHIP_TO = "TEAM 211",
+                                        TEAM_NAME = "TEAM 211",
+                                        LOCATION_CODE = "TEAM 211",
+                                        STORAGE_LOCATION = "TEAM 211",
+                                        VENDOR_CODE = "TEAM 211",
+                                        TEAM_SERVICE = "TEAM 211",
+                                        TEAM_ID = "TEAM 211"
+                                    },
+                                    new()
+                                    {
+                                        SHIP_TO = "TEAM 212",
+                                        TEAM_NAME = "TEAM 212",
+                                        LOCATION_CODE = "TEAM 212",
+                                        STORAGE_LOCATION = "TEAM 212",
+                                        VENDOR_CODE = "TEAM 212",
+                                        TEAM_SERVICE = "TEAM 212",
+                                        TEAM_ID = "TEAM 212"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //staff[1]
+                },
+            //staff_list
+            RESOURCE = new()
+            {
+                SPLITTER_NAME_PRIMARY = "P00_SP01_18:1/3",
+                DROP_WIRE_DISTANCE = "N/A",
+                NEW_DROP_WIRE_ID = "8803204137",
+                SPLITTER_DISTANCE = "0",
+                DEVICE_MODEL = "MA5608T",
+                OLT_NAME = "OX_NKGYM_ZZ_01HW",
+                ONU = "ONT4917250",
+                UPLINK_RATE = "200Mbps",
+                DSLAM_PORT = "N/A",
+                ACTIVATION_ID = "2109118540",
+                CPE_INSTALLATION = "CPE",
+                SP2_OUT_PORT = "KKN0104-003:1/4",
+                SP2_RUNNING_STATE = "Available",
+                MDF_OUT_PORT = "N/A",
+                REUSE_FLAG = "N/A",
+                GEMPORT = "10(HSI over FTTH(GPON))",
+                SPLITTER_PORT = "KKN0104-003:1/4",
+                CPE_SN = "N/A",
+                PASSWORD = "97QY8JQ3M7",
+                ONU_ID = "17",
+                SP1_OUT_PORT = "P00_SP01_18:1/3",
+                ONU_UPLINK_PORT = "ONT4917250:eth/1",
+                IP_ADDRESS = "10.2.135.166",
+                STANDARD_ADDRESS_NAME = "Nong Kung Yai 40170 / BAN NONG KUNG YAI",
+                END_POINT_LONGITUDE = "N/A",
+                ODF_OUT = "ODF_NKGYM_01:1/1",
+                ODF_IN = "ODF_NKGYM_01:0/1",
+                CPE_MODEL = "HG8010H(ONU)",
+                DOWNLINK_RATE = "200Mbps",
+                SP1_RUNNING_STATE = "Available",
+                ONU_MODEL = "HG8010H(ONU)",
+                SP1_IN_PORT = "P00_SP01_18:0/1",
+                SP2_LONGITUDE = "103.076752",
+                SERVICE = "FTTH",
+                SP1_FIBER_CORE = "P00_SP01_18---P00_SP02_06_18:4",
+                EXISTING_DROP_WIRE_ID = "N/A",
+                DSLAM_MANUFACTURER = "N/A",
+                END_POINT_LATITUDE = "N/A",
+                SP2_LATITUDE = "16.636861",
+                SP2_DISTANCE = "0",
+                SVLAN = "2569(HSI over FTTH(GPON))",
+                SP1_LATITUDE = "16.634482",
+                SP1_LONGITUDE = "103.076439",
+                TCONT = "0(HSI over FTTH(GPON))",
+                CVLAN = "10(HSI over FTTH(GPON))",
+                SP2_IN_PORT = "KKN0104-003:0/1",
+                ODF_FIBER_CORE = "ODF_NKGYM_01---P00_SP01_18:1",
+                OLT_MANUFACTURER = "HUAWEI",
+                OLT_PON_PORT = "OX_NKGYM_ZZ_01HW:0-0-0-0"
+            }
+        }//ma
+    };
 }

@@ -29,7 +29,7 @@ public class NotifyAppointmentOrderRequestBase : CommonRequestModel
 
     [FromBody]
     [JsonProperty(Order = 1, NullValueHandling = NullValueHandling.Ignore)]
-    public NotifyAppointmentOrderMA? MA_ORDER { get; set; }
+    public NotifyAppointmentOrderMa? MA_ORDER { get; set; }
 
     public DecomposeNotifyAppointmentOrderRequestModel ToDecompose()
     {
