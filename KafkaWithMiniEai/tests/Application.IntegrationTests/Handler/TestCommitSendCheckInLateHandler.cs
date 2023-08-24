@@ -23,7 +23,7 @@ public sealed class TestCommitSendCheckInLateHandler : BaseIntergrationTest
         //Assert
         Assert.Equal(req.TransactionId, res.TRANSACTION_ID);
         Assert.Equal("50101", res.RESULT_CODE);
-        Assert.Equal("'FIBRENET_ID' parameter(s) should not be null or empty.", res.RESULT_DESC);
+        Assert.Equal("'MN_INTERNET_ID' parameter(s) should not be null or empty.", res.RESULT_DESC);
     }
 
     [Fact]

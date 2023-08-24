@@ -10,22 +10,22 @@ public class CommitNotifyAppointmentOrderValidator : AbstractValidator<CommitNot
         RuleFor(x => x.Header).SetValidator(new CommonRequestHeaderValidator());
 
         RuleFor(x => x.FIBRENET_ID)
-            .NotNull().NotEmpty()
+            .NotEmpty()
             .WithErrorCode("40003")
             .WithMessage(x => this.WithErrorMessage(nameof(x.FIBRENET_ID)));
 
         RuleFor(x => x.TYPE)
-            .NotNull().NotEmpty()
+            .NotEmpty()
             .WithErrorCode("40004")
             .WithMessage(x => this.WithErrorMessage(nameof(x.TYPE)));
 
         RuleFor(x => x.TYPE_OPER_DATE)
-            .NotNull().NotEmpty()
+            .NotEmpty()
             .WithErrorCode("40005")
             .WithMessage(x => this.WithErrorMessage(nameof(x.TYPE_OPER_DATE)));
 
         RuleFor(x => x.MSG_SEQ_ID)
-            .NotNull().NotEmpty()
+            .NotEmpty()
             .WithErrorCode("40006")
             .WithMessage(x => this.WithErrorMessage(nameof(x.MSG_SEQ_ID)));
 

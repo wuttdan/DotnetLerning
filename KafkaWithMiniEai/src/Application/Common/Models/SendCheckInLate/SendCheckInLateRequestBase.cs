@@ -7,7 +7,7 @@ namespace Application.Common.Models.SendCheckInLate;
 public class SendCheckInLateRequestBase : CommonRequestModel
 {
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public string? MN_TRANSACTION_ID { get; set; }
+    public string? MN_TRANSACTION_ID => Header?.TransactionId ?? string.Empty;
 
     public string? MN_INTERNET_ID { get; set; }
     public string? MN_ORDER_NO { get; set; }

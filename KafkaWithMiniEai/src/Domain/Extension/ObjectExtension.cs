@@ -7,20 +7,22 @@ public static class ObjectExtension
 {
     public static object? GetValueByName([NotNull] this object target, [NotNull] string propertyName)
     {
-        var propertyInfo = target.GetType().GetProperty(propertyName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
-        if (propertyInfo != null && propertyInfo.CanWrite)
+        PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(target.GetType());
+        var prop = properties.Find(propertyName, true);
+        if (prop != null)
         {
-            return propertyInfo.GetValue(target);
+            return prop.GetValue(target);
         }
         return null;
     }
 
     public static void SetValueByName([NotNull] this object target, string propertyName, object value)
     {
-        var propertyInfo = target.GetType().GetProperty(propertyName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
-        if (propertyInfo != null && propertyInfo.CanWrite)
+        PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(target.GetType());
+        var prop = properties.Find(propertyName, true);
+        if (prop != null)
         {
-            propertyInfo.SetValue(target, value, null);
+            prop.SetValue(target, value);
         }
     }
 

@@ -1,8 +1,8 @@
 ﻿using Application.Query.SendCheckInLate;
 
-namespace Application.IntegrationTests;
+namespace Application.UnitTests;
 
-public abstract partial class BaseIntergrationTest : IClassFixture<IntegrationTestWebAppFactory>
+public abstract partial class BaseApplicationUnitTest
 {
     protected CommitSendCheckInLateRequestModel GetTempSendCheckInLate()
     {

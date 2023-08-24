@@ -24,9 +24,4 @@ public abstract partial class BaseIntergrationTest : IClassFixture<IntegrationTe
         AppSource = appSource,
         AppDestination = appDestination
     };
-
-    protected void AssertErrorCodeDesc() 
-    {
-
-    }
 }
