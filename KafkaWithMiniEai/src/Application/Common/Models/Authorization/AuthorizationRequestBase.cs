@@ -14,6 +14,8 @@ public class AuthorizationRequestBase
     [JsonIgnore]
     public string? ACTION { get; set; }
 
+    public List<AcimRequestUser>? USERS { get; set; }
+
     public void Prepare([NotNull] AuthorizationRequestHeader header, string method, string path)
     {
         Header = header;
