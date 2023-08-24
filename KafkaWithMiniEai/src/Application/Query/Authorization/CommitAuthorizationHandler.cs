@@ -2,9 +2,9 @@
 
 namespace Application.Query.Authorization;
 
-public sealed class CommitAuthorizationHandler : IRequestHandler<CommitAuthorizationRequestModel, CommitAuthorizationResponseModel>
+public sealed class CommitAuthorizationHandler : IRequestHandler<CommitAuthorizationRequestModel, CommonAuthorizationResponseModel>
 {
-    public Task<CommitAuthorizationResponseModel> Handle(CommitAuthorizationRequestModel request, CancellationToken cancellationToken)
+    public Task<CommonAuthorizationResponseModel> Handle(CommitAuthorizationRequestModel request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

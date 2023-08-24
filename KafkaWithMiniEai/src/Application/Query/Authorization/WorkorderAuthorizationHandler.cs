@@ -2,9 +2,9 @@
 
 namespace Application.Query.Authorization;
 
-public sealed class WorkorderAuthorizationHandler : IRequestHandler<WorkorderAuthorizationRequestModel, WorkorderAuthorizationResponseModel>
+public sealed class WorkorderAuthorizationHandler : IRequestHandler<WorkorderAuthorizationRequestModel, CommonAuthorizationResponseModel>
 {
-    public Task<WorkorderAuthorizationResponseModel> Handle(WorkorderAuthorizationRequestModel request, CancellationToken cancellationToken)
+    public Task<CommonAuthorizationResponseModel> Handle(WorkorderAuthorizationRequestModel request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

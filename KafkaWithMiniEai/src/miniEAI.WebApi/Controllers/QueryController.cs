@@ -56,7 +56,7 @@ public sealed class QueryController : ApiController
     [HttpPost("/api/acimuser")]
     [HttpPut("/api/acimuser")]
     [HttpPost("/api/acimuser/del")]
-    public async Task<ResponseBase> Authorization([FromHeader] AuthorizationRequestHeader header, [FromBody] CommitAuthorizationRequestModel body, CancellationToken cancellationToken)
+    public async Task<CommonAuthorizationResponseModel> Authorization([FromHeader] AuthorizationRequestHeader header, [FromBody] CommitAuthorizationRequestModel body, CancellationToken cancellationToken)
     {
         body.Prepare(header, Request.Method, Request.Path);
         return await Mediator.Send(body, cancellationToken);

@@ -1,4 +1,5 @@
 ﻿using Application.Common.Interfaces;
+using Application.Query.Microsite;
 using Application.Query.NotifyAppointmentOrder;
 using Application.Query.SendCheckInLate;
 using Domain.Extension;
@@ -54,6 +55,18 @@ public sealed class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<T
                 var req2 = request as CommitSendCheckInLateRequestModel;
                 var res2 = req2?.CreateResponse(failure.ErrorMessage, failure.ErrorCode);
                 res.SetAllProperties(res2);
+                break;
+
+            case Type _ when type == typeof(CommitMicrositeRequestModel):
+                var req3 = request as CommitMicrositeRequestModel;
+                var res3 = req3?.CreateResponse(failure.ErrorMessage, failure.ErrorCode);
+                res.SetAllProperties(res3);
+                break;
+
+            case Type _ when type == typeof(CommitMicrositeUpdateRequestModel):
+                var req4 = request as CommitMicrositeUpdateRequestModel;
+                var res4 = req4?.CreateResponse(failure.ErrorMessage, failure.ErrorCode);
+                res.SetAllProperties(res4);
                 break;
         }
         return res;

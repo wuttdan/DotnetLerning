@@ -3,6 +3,6 @@ using MediatR;
 
 namespace Application.Query.Authorization;
 
-public sealed class CommitAuthorizationRequestModel : AuthorizationRequestBase, IRequest<CommitAuthorizationResponseModel>
+public sealed class CommitAuthorizationRequestModel : AuthorizationRequestBase, IRequest<CommonAuthorizationResponseModel>
 {
 }

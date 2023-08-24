@@ -2,9 +2,9 @@
 
 namespace Application.Query.Authorization;
 
-public sealed class DecomposeAuthorizationHandler : IRequestHandler<DecomposeAuthorizationRequestModel, DecomposeAuthorizationResponseModel>
+public sealed class DecomposeAuthorizationHandler : IRequestHandler<DecomposeAuthorizationRequestModel, CommonAuthorizationResponseModel>
 {
-    public Task<DecomposeAuthorizationResponseModel> Handle(DecomposeAuthorizationRequestModel request, CancellationToken cancellationToken)
+    public Task<CommonAuthorizationResponseModel> Handle(DecomposeAuthorizationRequestModel request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

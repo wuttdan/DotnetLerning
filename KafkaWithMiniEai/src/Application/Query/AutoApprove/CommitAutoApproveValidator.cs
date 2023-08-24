@@ -3,6 +3,6 @@ using FluentValidation;
 
 namespace Application.Query.AutoApprove;
 
-public class CommitAutoApproveValidator : AbstractValidator<AutoApproveRequestBase>
+public class CommitAutoApproveValidator : AbstractValidator<CommitAutoApproveRequestModel>
 {
 }

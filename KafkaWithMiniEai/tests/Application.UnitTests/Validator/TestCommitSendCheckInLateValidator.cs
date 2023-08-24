@@ -1,5 +1,6 @@
 ﻿using Application.Query.SendCheckInLate;
 using Domain.Extension;
+using FluentValidation.TestHelper;
 using Xunit;
 
 namespace Application.UnitTests.Validator;
@@ -49,65 +50,16 @@ public sealed class TestCommitSendCheckInLateValidator : BaseApplicationUnitTest
         result.ShouldHaveValidationErrorFor(propName);
     }
 
-    ////[Fact]
-    ////public void Should_Error_when_OrderNo_is_NullOrEmpty()
-    ////{
-    ////    // Arrange
-    ////    var req = GetTempSendCheckInLate();
-    ////    req.MN_ORDER_NO = "";
-    ////    // Act
-    ////    var result = validator.TestValidate(req);
-    ////    // Assert
-    ////    result.ShouldHaveValidationErrorFor(req => req.MN_ORDER_NO);
-    ////}
-    ////
-    ////[Fact]
-    ////public void Should_Error_when_AppointmentDate_is_NullOrEmpty()
-    ////{
-    ////    // Arrange
-    ////    var req = GetTempSendCheckInLate();
-    ////    req.MN_APPOINTMENT_DATE = "";
-    ////    // Act
-    ////    var result = validator.TestValidate(req);
-    ////    // Assert
-    ////    result.ShouldHaveValidationErrorFor(req => req.MN_APPOINTMENT_DATE);
-    ////}
-    ////
-    ////[Fact]
-    ////public void Should_Error_when_Slot_is_NullOrEmpty()
-    ////{
-    ////    // Arrange
-    ////    var req = GetTempSendCheckInLate();
-    ////    req.MN_SLOT = "";
-    ////    // Act
-    ////    var result = validator.TestValidate(req);
-    ////    // Assert
-    ////    result.ShouldHaveValidationErrorFor(req => req.MN_SLOT);
-    ////}
-    ////
-    ////[Fact]
-    ////public void Should_Error_when_Package_is_NullOrEmpty()
-    ////{
-    ////    // Arrange
-    ////    var req = GetTempSendCheckInLate();
-    ////    req.MN_PACKAGE = "";
-    ////    // Act
-    ////    var result = validator.TestValidate(req);
-    ////    // Assert
-    ////    result.ShouldHaveValidationErrorFor(req => req.MN_PACKAGE);
-    ////}
-    ////
-    ////[Fact]
-    ////public void Should_Error_when_ProductName_is_NullOrEmpty()
-    ////{
-    ////    // Arrange
-    ////    var req = GetTempSendCheckInLate();
-    ////    req.MN_PRODUCT_NAME = "";
-    ////    // Act
-    ////    var result = validator.TestValidate(req);
-    ////    // Assert
-    ////    result.ShouldHaveValidationErrorFor(req => req.MN_PRODUCT_NAME);
-    ////}
+    [Fact]
+    public void Should_Pass_when_RequireProperty_is_HaveValue()
+    {
+        // Arrange
+        var req = GetTempSendCheckInLate();
+        // Act
+        var result = validator.TestValidate(req);
+        // Assert
+        result.ShouldNotHaveAnyValidationErrors();
+    }
 }
 
 
