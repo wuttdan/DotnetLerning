@@ -69,7 +69,7 @@ public sealed class CommitNotifyAppointmentOrderHandler : IRequestHandler<Commit
                 }
             }
         });
-        return Task.FromResult((CommitNotifyAppointmentOrderResponseModel)result);
+        return Task.FromResult(result);
     }
 
     private void InsertStaffsAndCompaniesAndTeams(long orderId, List<NotifyAppointmentOrderStaff>? staffs, string appSource)

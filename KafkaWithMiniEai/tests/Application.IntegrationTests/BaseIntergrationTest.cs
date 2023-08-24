@@ -22,6 +22,7 @@ public abstract partial class BaseIntergrationTest : IClassFixture<IntegrationTe
     {
         TransactionId = transactionId ?? GenUtil.GenTransactionId(),
         AppSource = appSource,
-        AppDestination = appDestination
+        AppDestination = appDestination,
+        ContentType = AppConstant.HeaderContentType.APPJ_UTF8
     };
 }

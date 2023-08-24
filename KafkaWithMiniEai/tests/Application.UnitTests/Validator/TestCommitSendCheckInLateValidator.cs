@@ -6,12 +6,11 @@ namespace Application.UnitTests.Validator;
 
 public sealed class TestCommitSendCheckInLateValidator : BaseApplicationUnitTest
 {
-    private CommitSendCheckInLateValidator validator;
-    public TestCommitSendCheckInLateValidator(FixtureApplicationUnitTest appFixture)
-        : base(appFixture)
+    private CommitSendCheckInLateValidator validator = null;
+    public TestCommitSendCheckInLateValidator()
     {
         // Arrange
-        validator = GetService<CommitSendCheckInLateValidator>();
+        validator = new CommitSendCheckInLateValidator();
     }
 
     [Theory]

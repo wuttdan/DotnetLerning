@@ -17,4 +17,9 @@ public static class AppConstant
         public const string FORMAT_SQL_DATETIME = "dd/MM/yyyy HH:mm:ss";
         public const string FORMAT_D01_T04 = "yyyy-MM-dd HH:mm:ss.fff";
     }
+
+    public static class HeaderContentType
+    {
+        public const string APPJ_UTF8 = "application/json; charset=utf-8";
+    }
 }

@@ -3,6 +3,7 @@ using Application.Query.NotifyAppointmentOrder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,5 +19,12 @@ public class CommonRequestModel: RequestBase
             RESULT_CODE = resultCode,
             RESULT_DESC = resultDesc
         };
+    }
+    public void ContentTypeAsJson()
+    {
+        if (Header?.ContentType != null)
+        {
+            Header.ContentType = "application/json; charset=utf-8";
+        }
     }
 }
