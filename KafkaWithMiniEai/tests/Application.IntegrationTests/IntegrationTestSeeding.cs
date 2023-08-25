@@ -1,7 +1,9 @@
 ﻿using Application.Common.Interfaces;
 using Domain.Entities.Minieai;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,23 +15,38 @@ public static class IntegrationTestSeeding
     private static readonly string CreatedBy = "IntegrationTest";
     public static void Seeding(this IPrimaryDbContext primaryDb)
     {
-        if (!primaryDb.FbbTblMappingIds.Any())
+        var executionStrategy = primaryDb.Db.CreateExecutionStrategy();
+        executionStrategy.Execute(() =>
         {
-            primaryDb.SeedMappingId();
-        }
-        if (!primaryDb.FbbTblMappingWos.Any())
-        {
-            primaryDb.SeedMappingWo();
-        }
-        if (!primaryDb.FbbTblMappingExternals.Any())
-        {
-            primaryDb.SeedMappingExternal();
-        }
-        if (!primaryDb.FbbTblListOfValues.Any())
-        {
-            primaryDb.SeedListOfValue();
-        }
-        primaryDb.SaveChanges();
+            using (var transaction = primaryDb.Db.BeginTransaction())
+            {
+                try
+                {
+                    if (!primaryDb.FbbTblMappingIds.Any())
+                    {
+                        primaryDb.SeedMappingId();
+                    }
+                    if (!primaryDb.FbbTblMappingWos.Any())
+                    {
+                        primaryDb.SeedMappingWo();
+                    }
+                    if (!primaryDb.FbbTblMappingExternals.Any())
+                    {
+                        primaryDb.SeedMappingExternal();
+                    }
+                    if (!primaryDb.FbbTblListOfValues.Any())
+                    {
+                        primaryDb.SeedListOfValue();
+                    }
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error occurred Seeding: {ex.ToString()}");
+                    transaction.Rollback();
+                }
+            }
+        });
     }
     private static void SeedMappingId(this IPrimaryDbContext primaryDb)
     {
@@ -45,6 +62,7 @@ public static class IntegrationTestSeeding
             new(){ TypeEvent="evJobApprove", AppSource="FBSS SOA", ResponseTime="IMMEDIATELY", Created=CreatedBy, CreatedDate=DateTime.Now, LastUpd=CreatedBy, LastUpdDate=DateTime.Now },
         };
         primaryDb.FbbTblMappingIds.AddRange(allMappingId);
+        primaryDb.SaveChanges();
     }
     private static void SeedMappingWo(this IPrimaryDbContext primaryDb)
     {
@@ -71,6 +89,7 @@ public static class IntegrationTestSeeding
             new(){ MappingId=8, Destination="SOA", ExternalId="JOBAPPROVE_SOA", TypeExternal="JOBAPPROVE_SOA", SeqNum=1,  Created=CreatedBy, CreatedDate=DateTime.Now, LastUpd=CreatedBy, LastUpdDate=DateTime.Now },
         };
         primaryDb.FbbTblMappingWos.AddRange(allMappingWo);
+        primaryDb.SaveChanges();
     }
     private static void SeedMappingExternal(this IPrimaryDbContext primaryDb)
     {
@@ -97,6 +116,7 @@ public static class IntegrationTestSeeding
             new(){ MappingWo=19, ExternalId="JOBAPPROVE_SOA", Typews="REST", EndpointName="Job Approve SOA", UrlEndpoint="https://api.staging-fbbsoa.intra.ais/soa/v1/source/eai/approve", IsOnline="Y", RetryCount=2, SleepTimes=60, RequestTimeout=60, Created=CreatedBy, CreatedDate=DateTime.Now, LastUpd=CreatedBy, LastUpdDate=DateTime.Now },
         };
         primaryDb.FbbTblMappingExternals.AddRange(allMappingExternal);
+        primaryDb.SaveChanges();
     }
 
     private static void SeedListOfValue(this IPrimaryDbContext primaryDb)
@@ -160,6 +180,7 @@ public static class IntegrationTestSeeding
             new(){ LovName="FBBCPGWINTERFACE_NODE", LovValue1="PREM", LovValue2="NULL", LovValue3="NULL", ActiveFlag="Y", ExternalId="NULL", Created=CreatedBy, CreatedDate=DateTime.Now, LastUpd=CreatedBy, LastUpdDate=DateTime.Now },
         };
         primaryDb.FbbTblListOfValues.AddRange(allLov);
+        primaryDb.SaveChanges();
     }
 
     private static string GetPrepareSql(string key)

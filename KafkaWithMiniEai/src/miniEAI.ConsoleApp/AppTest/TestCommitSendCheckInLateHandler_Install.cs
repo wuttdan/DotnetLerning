@@ -3,6 +3,7 @@ using Application.Common.Interfaces;
 using Application.Common.Models.NotifyAppointmentOrder;
 using Application.Query;
 using Application.Query.NotifyAppointmentOrder;
+using Application.Query.SendCheckInLate;
 using Application.Util;
 using Domain.Extension;
 using miniEAI.ConsoleApp.CoreTest;
@@ -14,24 +15,23 @@ using System.Threading.Tasks;
 
 namespace miniEAI.ConsoleApp.AppTest;
 
-public class TestCommitNotifyAppointmentOrderHandler_Install : ApplicationTestBase
+public class TestCommitSendCheckInLateHandler_Install : ApplicationTestBase
 {
-    private CommitNotifyAppointmentOrderValidator? _validator = null;
-    private CommitNotifyAppointmentOrderHandler? _handler = null;
-    public TestCommitNotifyAppointmentOrderHandler_Install(ILogger logger,
+    private CommitSendCheckInLateValidator? _validator = null;
+    private CommitSendCheckInLateHandler? _handler = null;
+    public TestCommitSendCheckInLateHandler_Install(ILogger logger,
         IPrimaryDbContext primaryDb,
-        CommitNotifyAppointmentOrderValidator validator)
+        CommitSendCheckInLateValidator validator)
         : base(logger)
     {
 
         _validator = validator;
-        _handler = new CommitNotifyAppointmentOrderHandler(logger, primaryDb);
+        _handler = new CommitSendCheckInLateHandler(logger, primaryDb);
     }
 
     public override async Task Run(params string[] args)
     {
-        var req = GetTempNotifyInstall();
-        req.Header = GetCommonRequestHeader("");
+        var req = GetTempSendCheckInLateInstall();
         try
         {
             var result = _validator.Validate(req);

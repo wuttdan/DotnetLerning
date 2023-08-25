@@ -24,10 +24,6 @@ public abstract partial class ApplicationTestBase : IApplicationTest
         AppDestination = appDestination
     };
 
-
-
-
-
     ////protected RequestHeader GetRequestHeader(string? appSource = null, string? appDestination = null)
     ////{
     ////    return new ()
